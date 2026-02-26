@@ -15,16 +15,16 @@
         <!-- Desktop Navigation -->
         <div class="hidden md:block">
           <div class="ml-10 flex items-baseline space-x-8">
-            <a href="#home" class="text-gray-900 hover:text-primary-500 px-3 py-2 text-sm font-medium transition-colors">Home</a>
-            <a href="#products" class="text-gray-900 hover:text-primary-500 px-3 py-2 text-sm font-medium transition-colors">Products</a>
-            <a href="#about" class="text-gray-900 hover:text-primary-500 px-3 py-2 text-sm font-medium transition-colors">About</a>
-            <a href="#contact" class="text-gray-900 hover:text-primary-500 px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+            <RouterLink to="/" class="text-gray-900 hover:text-primary-500 px-3 py-2 text-sm font-medium transition-colors">Home</RouterLink>
+            <RouterLink to="/pricing" class="text-gray-900 hover:text-primary-500 px-3 py-2 text-sm font-medium transition-colors">Pricing</RouterLink>
+            <RouterLink to="/about" class="text-gray-900 hover:text-primary-500 px-3 py-2 text-sm font-medium transition-colors">About</RouterLink>
+            <a href="/#contact" class="text-gray-900 hover:text-primary-500 px-3 py-2 text-sm font-medium transition-colors">Contact</a>
           </div>
         </div>
 
         <!-- CTA Button -->
         <div class="hidden md:block">
-          <a href="#contact" class="btn-primary">
+          <a href="/#contact" class="btn-primary">
             Get Started
           </a>
         </div>
@@ -47,12 +47,12 @@
     <!-- Mobile menu -->
     <div v-show="mobileMenuOpen" class="md:hidden">
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-        <a href="#home" class="text-gray-900 hover:text-primary-500 block px-3 py-2 text-base font-medium">Home</a>
-        <a href="#products" class="text-gray-900 hover:text-primary-500 block px-3 py-2 text-base font-medium">Products</a>
-        <a href="#about" class="text-gray-900 hover:text-primary-500 block px-3 py-2 text-base font-medium">About</a>
-        <a href="#contact" class="text-gray-900 hover:text-primary-500 block px-3 py-2 text-base font-medium">Contact</a>
+        <RouterLink to="/" class="text-gray-900 hover:text-primary-500 block px-3 py-2 text-base font-medium" @click="mobileMenuOpen = false">Home</RouterLink>
+        <RouterLink to="/pricing" class="text-gray-900 hover:text-primary-500 block px-3 py-2 text-base font-medium" @click="mobileMenuOpen = false">Pricing</RouterLink>
+        <RouterLink to="/about" class="text-gray-900 hover:text-primary-500 block px-3 py-2 text-base font-medium" @click="mobileMenuOpen = false">About</RouterLink>
+        <a href="/#contact" class="text-gray-900 hover:text-primary-500 block px-3 py-2 text-base font-medium" @click="mobileMenuOpen = false">Contact</a>
         <div class="px-3 py-2">
-          <a href="#contact" class="btn-primary w-full text-center block">
+          <a href="/#contact" class="btn-primary w-full text-center block">
             Get Started
           </a>
         </div>

@@ -40,10 +40,10 @@
         <div>
           <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
           <ul class="space-y-3">
-            <li><a href="#home" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
-            <li><a href="#products" class="text-gray-300 hover:text-white transition-colors">Products</a></li>
-            <li><a href="#about" class="text-gray-300 hover:text-white transition-colors">About</a></li>
-            <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+            <li><RouterLink to="/" class="text-gray-300 hover:text-white transition-colors">Home</RouterLink></li>
+            <li><RouterLink to="/pricing" class="text-gray-300 hover:text-white transition-colors">Pricing</RouterLink></li>
+            <li><RouterLink to="/about" class="text-gray-300 hover:text-white transition-colors">About</RouterLink></li>
+            <li><a href="/#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
           </ul>
         </div>
         
