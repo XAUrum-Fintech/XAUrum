@@ -1,92 +1,125 @@
-# Xaurum Fintech Pvt Ltd Website
+# Xaurum Fintech - Company Landing Page
 
-Standalone marketing website repository for Xaurum Fintech Pvt Ltd.
+A modern, responsive landing page for Xaurum Fintech showcasing our financial technology solutions and products.
 
-## Tech Stack
+## 🚀 Features
 
-- Vue 3
-- Vite
-- TypeScript
-- Vue Router
-- Vitest
+- **Modern Design**: Clean, professional design with business blue color scheme
+- **Responsive**: Fully responsive design that works on all devices
+- **Performance**: Built with Vue 3 and Vite for optimal performance
+- **SEO Optimized**: Proper meta tags and semantic HTML structure
+- **Interactive**: Smooth scrolling, animations, and interactive elements
 
-## Routes
+## 🎨 Design System
 
-- `/` Home
-- `/pricing` Pricing (3 tiers, monthly/annual toggle)
-- `/about` About
+### Colors
+- **Primary**: Business Blue (#3b82f6)
+- **Secondary**: Lighter Blue (#0ea5e9)
+- **Gradients**: Used throughout for modern visual appeal
 
-## Local Setup
+### Sections
+1. **Hero Section**: Company introduction with call-to-action
+2. **Products & Services**: Featuring OroB platform and other services
+3. **About Section**: Company mission, values, and technology stack
+4. **Call to Action**: Contact form and conversion section
+5. **Footer**: Company info, links, and social media
 
-1. Install dependencies:
+## 🛠️ Tech Stack
+
+- **Vue 3**: Progressive JavaScript framework
+- **Vite**: Fast build tool and dev server
+- **Tailwind CSS**: Utility-first CSS framework
+- **PostCSS**: CSS processing
+- **Inter Font**: Modern, professional typography
+
+## 📦 Installation
 
 ```bash
+# Install dependencies
 npm install
-```
 
-2. Start dev server:
-
-```bash
+# Start development server
 npm run dev
-```
 
-## Build and Test
-
-Run tests:
-
-```bash
-npm run test
-```
-
-Run production build:
-
-```bash
+# Build for production
 npm run build
+
+# Preview production build
+npm run preview
 ```
 
-## Environment Variables
+## 🌐 Development
 
-Copy `.env.example` to `.env` and set values:
+The landing page runs on `http://localhost:5173/` during development.
 
-- `VITE_SITE_URL` - Production site URL
-- `VITE_ANALYTICS_ID` - Analytics provider ID
+### Project Structure
+```
+src/
+├── components/
+│   ├── Navigation.vue        # Top navigation bar
+│   ├── HeroSection.vue       # Hero section with main CTA
+│   ├── ProductsServices.vue  # Products and services showcase
+│   ├── AboutSection.vue      # About company and mission
+│   ├── CallToAction.vue      # Contact form and final CTA
+│   └── Footer.vue           # Footer with links and info
+├── App.vue                  # Main app component
+├── main.js                  # App entry point
+└── style.css               # Global styles and Tailwind imports
+```
 
-## Deploy
+## 🎯 Key Features
 
-### Vercel
+### Hero Section
+- Compelling headline with gradient text
+- Company statistics
+- Dual call-to-action buttons
+- Interactive background elements
+- Mock dashboard preview
 
-1. Import this repository in Vercel.
-2. Framework preset: `Vite`.
-3. Build command: `npm run build`.
-4. Output directory: `dist`.
-5. Add environment variables from `.env.example`.
+### Products & Services
+- Featured OroB platform showcase
+- Service cards with hover effects
+- Clear value propositions
+- Call-to-action buttons
 
-### Netlify
+### About Section
+- Company mission and values
+- Technology stack showcase
+- Team representation
+- Company statistics
 
-1. Connect repository in Netlify.
-2. Build command: `npm run build`.
-3. Publish directory: `dist`.
-4. Add environment variables from `.env.example`.
+### Contact Form
+- Comprehensive contact form
+- Form validation
+- Success/error states
+- Multiple contact options
 
-### GitHub Pages
+## 🚀 Deployment
 
-1. Build with `npm run build`.
-2. Deploy `dist/` using a GitHub Pages action (or `gh-pages` branch).
-3. Ensure SPA routing fallback is configured.
+Ready for deployment to any static hosting service:
+- Vercel
+- Netlify
+- AWS S3 + CloudFront
+- GitHub Pages
 
-## CI
+## 📱 Responsive Design
 
-GitHub Actions workflow: `.github/workflows/ci.yml`
+Fully responsive with breakpoints:
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
 
-- `npm ci`
-- `npm run test`
-- `npm run build`
+## 🔧 Customization
 
-## Publishing Checklist
+Easy to customize:
+- Colors defined in `tailwind.config.js`
+- Component-based architecture
+- Modular CSS with Tailwind utilities
+- Configurable content in each component
 
-- [ ] Repository exists under org and is accessible.
-- [ ] `.env` is configured for production values.
-- [ ] CI passes on `main`.
-- [ ] `npm run test` passes.
-- [ ] `npm run build` passes.
-- [ ] Deployment target (Vercel/Netlify/GitHub Pages) configured.
+## 📈 Performance
+
+- Optimized bundle size
+- Lazy loading where appropriate
+- Modern CSS with Tailwind
+- Fast Vite development server
