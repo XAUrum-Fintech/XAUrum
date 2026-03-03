@@ -81,11 +81,29 @@ Workflow: `.github/workflows/ci.yml`
 3. Publish directory: `dist`
 4. Configure env variables from `.env.example`
 
-### GitHub Pages
+### GitHub Pages + GoDaddy Custom Domain
 
-1. Build with `npm run build`.
-2. Deploy `dist/` using a GitHub Pages action.
-3. Configure SPA fallback if needed.
+This repo includes `.github/workflows/deploy-pages.yml` to deploy on every push to `main`.
+
+1. In GitHub: `Settings -> Pages`, set `Source` to `GitHub Actions`.
+2. In GitHub: `Settings -> Secrets and variables -> Actions -> Variables`, add:
+   - `CUSTOM_DOMAIN=yourdomain.com` (or `www.yourdomain.com`)
+3. Push to `main` and wait for the `Deploy to GitHub Pages` workflow to pass.
+
+GoDaddy DNS records (for apex domain `yourdomain.com`):
+
+- `A` record, host `@` -> `185.199.108.153`
+- `A` record, host `@` -> `185.199.109.153`
+- `A` record, host `@` -> `185.199.110.153`
+- `A` record, host `@` -> `185.199.111.153`
+- `CNAME` record, host `www` -> `<your-github-username>.github.io`
+
+Then, in GitHub `Settings -> Pages`, set `Custom domain` to the same value used in `CUSTOM_DOMAIN` and enable `Enforce HTTPS` after certificate issuance.
+
+Notes:
+- Remove conflicting `A`, `AAAA`, or `CNAME` records for the same host.
+- DNS propagation can take from a few minutes up to 24-48 hours.
+- The workflow automatically adds `404.html` fallback for Vue Router history mode.
 
 ## Publishing Checklist
 
