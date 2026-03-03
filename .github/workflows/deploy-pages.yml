@@ -33,10 +33,16 @@ jobs:
       - name: Run tests
         run: npm run test
 
-      - name: Set Vite base path for deployment
+      - name: Resolve deployment base path and custom domain
         run: |
-          if [ -n "${{ vars.CUSTOM_DOMAIN }}" ]; then
+          CUSTOM_DOMAIN="${{ vars.CUSTOM_DOMAIN }}"
+          if [ -z "$CUSTOM_DOMAIN" ] && [ -f public/CNAME ]; then
+            CUSTOM_DOMAIN="$(head -n 1 public/CNAME | tr -d '[:space:]')"
+          fi
+
+          if [ -n "$CUSTOM_DOMAIN" ]; then
             echo "VITE_BASE_PATH=/" >> "$GITHUB_ENV"
+            echo "CUSTOM_DOMAIN=$CUSTOM_DOMAIN" >> "$GITHUB_ENV"
           else
             echo "VITE_BASE_PATH=/${{ github.event.repository.name }}/" >> "$GITHUB_ENV"
           fi
@@ -48,8 +54,8 @@ jobs:
         run: |
           cp dist/index.html dist/404.html
           touch dist/.nojekyll
-          if [ -n "${{ vars.CUSTOM_DOMAIN }}" ]; then
-            echo "${{ vars.CUSTOM_DOMAIN }}" > dist/CNAME
+          if [ -n "$CUSTOM_DOMAIN" ]; then
+            echo "$CUSTOM_DOMAIN" > dist/CNAME
           fi
 
       - name: Upload Pages artifact
