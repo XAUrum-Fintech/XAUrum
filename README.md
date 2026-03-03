@@ -104,6 +104,9 @@ Notes:
 - Remove conflicting `A`, `AAAA`, or `CNAME` records for the same host.
 - DNS propagation can take from a few minutes up to 24-48 hours.
 - The workflow automatically adds `404.html` fallback for Vue Router history mode.
+- The workflow also sets Vite base path automatically:
+  - no custom domain -> `/<repo-name>/`
+  - custom domain set -> `/`
 
 ## Publishing Checklist
 
