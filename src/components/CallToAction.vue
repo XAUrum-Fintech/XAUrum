@@ -1,91 +1,112 @@
 <template>
-  <section id="contact" class="py-20 bg-gradient-to-r from-primary-500 to-secondary-500">
+  <section id="contact" class="py-20 bg-gradient-to-r from-secondary-800 to-secondary-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <!-- Left Content -->
         <div class="text-white">
           <h2 class="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Transform Your Financial Operations?
+            Ready to Modernize Your
+            <span class="text-primary-400">Bullion Business?</span>
           </h2>
-          
-          <p class="text-xl text-blue-100 mb-8">
-            Join hundreds of businesses already using Xaurum Fintech solutions to streamline 
-            their operations, reduce costs, and accelerate growth.
+
+          <p class="text-xl text-secondary-300 mb-8">
+            Get a personalised demo of OroB and see how it can transform your trading operations.
           </p>
-          
-          <!-- Benefits -->
+
+          <!-- Contact Info -->
           <div class="space-y-4 mb-8">
             <div class="flex items-center">
-              <svg class="w-6 h-6 text-green-300 mr-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              <svg class="w-5 h-5 text-primary-400 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
               </svg>
-              <span class="text-lg">Free consultation and demo</span>
+              <a href="mailto:contact@xaurum.in" class="text-lg text-secondary-200 hover:text-primary-400 transition-colors">contact@xaurum.in</a>
             </div>
             <div class="flex items-center">
-              <svg class="w-6 h-6 text-green-300 mr-4" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5 text-primary-400 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+              <a href="tel:+91875010921" class="text-lg text-secondary-200 hover:text-primary-400 transition-colors">+91 87501 0921</a>
+            </div>
+            <div class="flex items-start">
+              <svg class="w-5 h-5 text-primary-400 mr-4 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <span class="text-lg text-secondary-200">
+                Xaurum Fintech Pvt Ltd<br>
+                161, Kalidas Road, Ramnagar<br>
+                Coimbatore 641009
+              </span>
+            </div>
+          </div>
+
+          <!-- Benefits -->
+          <div class="space-y-3">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-primary-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
-              <span class="text-lg">Custom solution design</span>
+              <span class="text-secondary-200">Free personalised demo</span>
             </div>
             <div class="flex items-center">
-              <svg class="w-6 h-6 text-green-300 mr-4" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5 text-primary-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
-              <span class="text-lg">24/7 technical support</span>
+              <span class="text-secondary-200">Dedicated onboarding support</span>
             </div>
             <div class="flex items-center">
-              <svg class="w-6 h-6 text-green-300 mr-4" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5 text-primary-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
-              <span class="text-lg">Enterprise-grade security</span>
+              <span class="text-secondary-200">Custom branding &amp; domain setup</span>
             </div>
           </div>
         </div>
-        
+
         <!-- Right Content - Contact Form -->
         <div class="bg-white rounded-2xl shadow-2xl p-8">
           <div class="text-center mb-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-2">
-              Get Started Today
+            <h3 class="text-2xl font-bold text-secondary-900 mb-2">
+              Request a Demo
             </h3>
-            <p class="text-gray-600">
-              Fill out the form below and we'll get back to you within 24 hours.
+            <p class="text-secondary-600">
+              Tell us about your business and we'll schedule a personalised walkthrough.
             </p>
           </div>
-          
-          <form @submit.prevent="submitForm" class="space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <form @submit.prevent="submitForm" class="space-y-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
-                <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
-                  First Name *
+                <label for="firstName" class="block text-sm font-medium text-secondary-700 mb-1.5">
+                  Name *
                 </label>
                 <input
                   type="text"
                   id="firstName"
                   v-model="form.firstName"
                   required
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
-                  placeholder="John"
+                  class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+                  placeholder="Your name"
                 >
               </div>
-              
+
               <div>
-                <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">
-                  Last Name *
+                <label for="phone" class="block text-sm font-medium text-secondary-700 mb-1.5">
+                  Phone *
                 </label>
                 <input
-                  type="text"
-                  id="lastName"
-                  v-model="form.lastName"
+                  type="tel"
+                  id="phone"
+                  v-model="form.phone"
                   required
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
-                  placeholder="Doe"
+                  class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+                  placeholder="+91 98765 43210"
                 >
               </div>
             </div>
-            
+
             <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+              <label for="email" class="block text-sm font-medium text-secondary-700 mb-1.5">
                 Email Address *
               </label>
               <input
@@ -93,62 +114,60 @@
                 id="email"
                 v-model="form.email"
                 required
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
-                placeholder="john@company.com"
+                class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+                placeholder="you@company.com"
               >
             </div>
-            
+
             <div>
-              <label for="company" class="block text-sm font-medium text-gray-700 mb-2">
-                Company Name
+              <label for="company" class="block text-sm font-medium text-secondary-700 mb-1.5">
+                Business Name
               </label>
               <input
                 type="text"
                 id="company"
                 v-model="form.company"
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
-                placeholder="Your Company"
+                class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+                placeholder="Your bullion business"
               >
             </div>
-            
+
             <div>
-              <label for="interest" class="block text-sm font-medium text-gray-700 mb-2">
-                I'm interested in *
+              <label for="interest" class="block text-sm font-medium text-secondary-700 mb-1.5">
+                Interested Plan
               </label>
               <select
                 id="interest"
                 v-model="form.interest"
-                required
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+                class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
               >
-                <option value="">Select an option</option>
-                <option value="orob">OroB - Bullion Trading Platform</option>
-                <option value="custom">Custom Fintech Solution</option>
-                <option value="api">Financial APIs</option>
-                <option value="consulting">Fintech Consulting</option>
-                <option value="other">Other</option>
+                <option value="">Select a plan</option>
+                <option value="lite">OroB Lite</option>
+                <option value="plus">OroB Plus</option>
+                <option value="max">OroB Max</option>
+                <option value="undecided">Not sure yet</option>
               </select>
             </div>
-            
+
             <div>
-              <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+              <label for="message" class="block text-sm font-medium text-secondary-700 mb-1.5">
                 Message
               </label>
               <textarea
                 id="message"
                 v-model="form.message"
-                rows="4"
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none"
-                placeholder="Tell us about your project or requirements..."
+                rows="3"
+                class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none"
+                placeholder="Tell us about your business needs..."
               ></textarea>
             </div>
-            
+
             <button
               type="submit"
               :disabled="isSubmitting"
               class="w-full btn-primary text-lg py-4 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <span v-if="!isSubmitting">Send Message</span>
+              <span v-if="!isSubmitting">Send Request</span>
               <span v-else class="flex items-center justify-center">
                 <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                   <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -158,7 +177,7 @@
               </span>
             </button>
           </form>
-          
+
           <!-- Success Message -->
           <div v-if="showSuccess" class="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
             <div class="flex items-center">
@@ -166,7 +185,7 @@
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
               <span class="text-green-800 font-medium">
-                Thank you! We'll get back to you within 24 hours.
+                Thank you! We'll get back to you shortly to schedule your demo.
               </span>
             </div>
           </div>
@@ -181,7 +200,7 @@ import { ref, reactive } from 'vue'
 
 const form = reactive({
   firstName: '',
-  lastName: '',
+  phone: '',
   email: '',
   company: '',
   interest: '',
@@ -193,19 +212,18 @@ const showSuccess = ref(false)
 
 const submitForm = async () => {
   isSubmitting.value = true
-  
+
   // Simulate form submission
   await new Promise(resolve => setTimeout(resolve, 2000))
-  
+
   // Reset form
   Object.keys(form).forEach(key => {
     form[key] = ''
   })
-  
+
   isSubmitting.value = false
   showSuccess.value = true
-  
-  // Hide success message after 5 seconds
+
   setTimeout(() => {
     showSuccess.value = false
   }, 5000)

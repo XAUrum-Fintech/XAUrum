@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Shield outline -->
+  <path d="M100 10 C140 10 175 30 185 70 C195 110 175 155 100 190 C25 155 5 110 15 70 C25 30 60 10 100 10Z" fill="#1e293b" opacity="0.1"/>
+
+  <!-- Bow body -->
+  <path d="M60 140 C40 110 45 65 75 40" stroke="#1e293b" stroke-width="14" stroke-linecap="round" fill="none"/>
+  <path d="M60 140 C90 130 120 95 130 55" stroke="#1e293b" stroke-width="14" stroke-linecap="round" fill="none"/>
+
+  <!-- Bowstring -->
+  <line x1="75" y1="40" x2="130" y2="55" stroke="#1e293b" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Arrow shaft -->
+  <line x1="55" y1="150" x2="155" y2="35" stroke="#1e293b" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Arrow head -->
+  <polygon points="155,35 160,15 170,25 155,35" fill="#1e293b"/>
+  <polygon points="155,35 140,20 148,18 155,35" fill="#1e293b"/>
+
+  <!-- Chart arrow (upward trend) -->
+  <path d="M65 135 L95 105 L110 115 L155 45" stroke="#d97706" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <polygon points="155,45 145,40 150,52" fill="#d97706"/>
+
+  <!-- Gold bars -->
+  <g transform="translate(85, 80)">
+    <rect x="0" y="8" width="22" height="10" rx="1" fill="#d97706" stroke="#92400e" stroke-width="1"/>
+    <rect x="3" y="0" width="16" height="10" rx="1" fill="#f59e0b" stroke="#d97706" stroke-width="1"/>
+    <rect x="-5" y="16" width="22" height="10" rx="1" fill="#b45309" stroke="#92400e" stroke-width="1"/>
+  </g>
+</svg>
