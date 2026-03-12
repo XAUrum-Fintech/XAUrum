@@ -81,7 +81,7 @@ const team = reactive([
     name: 'Hariharan Ragunathan',
     initials: 'HR',
     role: '', // Add role when available
-    bio: 'Co-founder at Xaurum Fintech. Driving the vision to modernize India\'s bullion trading infrastructure with technology.',
+    bio: 'Building the vision to modernize India\'s bullion trading infrastructure with technology.',
     photo: null, // Replace with: '/team/hariharan.jpg'
     gradient: 'from-primary-500 to-primary-700',
     links: [
@@ -92,7 +92,7 @@ const team = reactive([
     name: 'Hariprasad Nagaraj',
     initials: 'HN',
     role: '', // Add role when available
-    bio: 'Co-founder at Xaurum Fintech. Building the engineering backbone of OroB — from real-time pricing to multi-tenant architecture.',
+    bio: 'Building the engineering backbone of OroB with an eye for user-centric design and scalable architecture.',
     photo: null, // Replace with: '/team/hariprasad.jpg'
     gradient: 'from-secondary-600 to-secondary-800',
     links: [
@@ -100,10 +100,10 @@ const team = reactive([
     ],
   },
   {
-    name: 'Radhakrishnan',
+    name: 'Radhakrishnan C',
     initials: 'RK',
     role: '', // Add role when available
-    bio: 'Core team member bringing deep domain expertise in bullion trading and financial operations.',
+    bio: 'Driving the vision to with deep domain expertise in bullion trading and financial operations.',
     photo: null, // Replace with: '/team/radhakrishnan.jpg'
     gradient: 'from-primary-600 to-primary-800',
     links: [
@@ -111,10 +111,10 @@ const team = reactive([
     ],
   },
   {
-    name: 'Reghunathan',
+    name: 'Reghunathan EP',
     initials: 'RN',
     role: '', // Add role when available
-    bio: 'Core team member contributing to product strategy and business development in the bullion industry.',
+    bio: 'Bringing deep financial expertise and compliance knowledge to ensure OroB meets the highest standards of security and regulatory adherence.',
     photo: null, // Replace with: '/team/reghunathan.jpg'
     gradient: 'from-secondary-500 to-secondary-700',
     links: [

@@ -54,7 +54,7 @@
               <!-- App bar -->
               <div class="bg-secondary-900 px-6 py-3 flex items-center justify-between">
                 <div class="flex items-center space-x-3">
-                  <img src="/logo.svg" alt="OroB" class="w-6 h-6 brightness-0 invert" />
+                  <img src="/logo.png" alt="OroB" class="w-6 h-6" />
                   <span class="font-semibold text-white text-sm">OroB Dashboard</span>
                 </div>
                 <div class="flex items-center space-x-2">

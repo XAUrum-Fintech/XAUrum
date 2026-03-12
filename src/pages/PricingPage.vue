@@ -110,6 +110,11 @@ const savingsPercent = (tier) => {
         </article>
       </div>
 
+      <!-- Tax disclaimer -->
+      <p class="mt-8 text-center text-sm text-secondary-500">
+        * All prices are exclusive of GST. Applicable taxes will be charged additionally.
+      </p>
+
       <!-- FAQ-like note -->
       <div class="mt-16 text-center">
         <div class="inline-block bg-white rounded-xl border border-secondary-200 p-6 max-w-2xl">

@@ -5,7 +5,7 @@
         <!-- Company Info -->
         <div class="md:col-span-2">
           <div class="flex items-center mb-6">
-            <img src="/logo.svg" alt="Xaurum Fintech" class="w-10 h-10 brightness-0 invert" />
+            <img src="/logo.png" alt="Xaurum Fintech" class="w-10 h-10" />
             <span class="ml-3 text-2xl font-bold">Xaurum <span class="text-primary-400">Fintech</span></span>
           </div>
 

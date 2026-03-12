@@ -145,6 +145,7 @@
                 <option value="lite">OroB Lite</option>
                 <option value="plus">OroB Plus</option>
                 <option value="max">OroB Max</option>
+                <option value="custom">Custom quote</option>
                 <option value="undecided">Not sure yet</option>
               </select>
             </div>
@@ -189,6 +190,14 @@
               </span>
             </div>
           </div>
+
+          <!-- Error Message -->
+          <div v-if="showError" class="mt-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+            <span class="text-red-800 font-medium">
+              Something went wrong. Please email us directly at
+              <a href="mailto:contact@xaurum.in" class="underline">contact@xaurum.in</a>.
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -209,23 +218,43 @@ const form = reactive({
 
 const isSubmitting = ref(false)
 const showSuccess = ref(false)
+const showError = ref(false)
+
+// TODO: Replace with your Formspree form ID
+// 1. Go to https://formspree.io and sign up (free)
+// 2. Create a new form with email: contact@xaurum.in
+// 3. Copy the form ID (e.g. "xpzvqkla") and paste it below
+const FORMSPREE_ID = 'xlgpbyka'
 
 const submitForm = async () => {
   isSubmitting.value = true
+  showError.value = false
 
-  // Simulate form submission
-  await new Promise(resolve => setTimeout(resolve, 2000))
+  try {
+    const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        name: form.firstName,
+        phone: form.phone,
+        email: form.email,
+        company: form.company,
+        interest: form.interest,
+        message: form.message,
+      }),
+    })
 
-  // Reset form
-  Object.keys(form).forEach(key => {
-    form[key] = ''
-  })
+    if (res.ok) {
+      Object.keys(form).forEach(key => { form[key] = '' })
+      showSuccess.value = true
+      setTimeout(() => { showSuccess.value = false }, 5000)
+    } else {
+      showError.value = true
+    }
+  } catch {
+    showError.value = true
+  }
 
   isSubmitting.value = false
-  showSuccess.value = true
-
-  setTimeout(() => {
-    showSuccess.value = false
-  }, 5000)
 }
 </script>
