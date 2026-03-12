@@ -5,7 +5,7 @@
         <!-- Logo -->
         <div class="flex items-center">
           <RouterLink to="/" class="flex-shrink-0 flex items-center">
-            <img src="/logo.png" alt="Xaurum Fintech" class="w-10 h-10" />
+            <img src="/logo.png" alt="Xaurum Fintech" class="w-12 h-12" />
             <span class="ml-3 text-2xl font-bold text-secondary-900">Xaurum <span class="text-primary-600">Fintech</span></span>
           </RouterLink>
         </div>

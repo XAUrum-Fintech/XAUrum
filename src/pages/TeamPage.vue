@@ -114,7 +114,7 @@ const team = reactive([
     name: 'Reghunathan EP',
     initials: 'RN',
     role: '', // Add role when available
-    bio: 'Bringing deep financial expertise and compliance knowledge to ensure OroB meets the highest standards of security and regulatory adherence.',
+    bio: 'Bringing deep financial expertise and compliance knowledge to ensure highest standards of regulatory adherence.',
     photo: null, // Replace with: '/team/reghunathan.jpg'
     gradient: 'from-secondary-500 to-secondary-700',
     links: [
