@@ -65,7 +65,7 @@
       <!-- Join us note -->
       <div class="mt-16 text-center">
         <p class="text-secondary-500 text-sm">
-          Photos and bios can be updated — reach out to us at
+          Reach out to us at
           <a href="mailto:contact@xaurum.in" class="text-primary-600 hover:text-primary-700 font-medium">contact@xaurum.in</a>
         </p>
       </div>
@@ -103,7 +103,7 @@ const team = reactive([
     name: 'Radhakrishnan C',
     initials: 'RK',
     role: '', // Add role when available
-    bio: 'Driving the vision to with deep domain expertise in bullion trading and financial operations.',
+    bio: 'Driving the vision with deep domain expertise in bullion trading and financial operations.',
     photo: null, // Replace with: '/team/radhakrishnan.jpg'
     gradient: 'from-primary-600 to-primary-800',
     links: [
