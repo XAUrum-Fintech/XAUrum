@@ -1,69 +1,22 @@
 <script setup>
-import { computed, ref } from 'vue'
-import { pricingTiers } from '@/data/pricing'
-
-const billingCycle = ref('quarterly')
-
-const priceSuffix = computed(() => (billingCycle.value === 'quarterly' ? '/quarter' : '/year'))
-
-const formatPrice = (tier) => {
-  const value = billingCycle.value === 'quarterly' ? tier.quarterlyPrice : tier.annualPrice
-  return new Intl.NumberFormat('en-IN', {
-    style: 'currency',
-    currency: 'INR',
-    maximumFractionDigits: 0,
-  }).format(value)
-}
-
-const savingsPercent = (tier) => {
-  const annual = tier.annualPrice
-  const quarterlyAnnual = tier.quarterlyPrice * 4
-  return Math.round(((quarterlyAnnual - annual) / quarterlyAnnual) * 100)
-}
+import { plans } from '@/data/pricing'
 </script>
 
 <template>
   <main class="pt-20 pb-20 bg-gradient-to-br from-primary-50 via-white to-secondary-50 min-h-screen">
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl font-bold text-secondary-900 mb-4">OroB Pricing</h1>
+        <h1 class="text-4xl md:text-5xl font-bold text-secondary-900 mb-4">OroB Plans</h1>
         <p class="text-lg text-secondary-600 max-w-2xl mx-auto">
-          Choose the plan that fits your bullion business. All plans include a branded website
-          with live price streaming and mobile-optimised experience.
+          Choose the plan that fits your bullion business. Contact us to discuss your needs and
+          receive personalised pricing.
         </p>
       </div>
 
-      <!-- Billing Toggle -->
-      <div class="flex justify-center mb-12">
-        <div class="inline-flex rounded-xl border border-secondary-200 bg-white p-1 shadow-sm" role="group" aria-label="Billing cycle">
-          <button
-            type="button"
-            data-testid="billing-quarterly"
-            class="px-6 py-2.5 text-sm font-semibold rounded-lg transition-colors"
-            :class="billingCycle === 'quarterly' ? 'bg-primary-600 text-white' : 'text-secondary-700 hover:bg-secondary-100'"
-            :aria-pressed="billingCycle === 'quarterly'"
-            @click="billingCycle = 'quarterly'"
-          >
-            Quarterly
-          </button>
-          <button
-            type="button"
-            data-testid="billing-annual"
-            class="px-6 py-2.5 text-sm font-semibold rounded-lg transition-colors relative"
-            :class="billingCycle === 'annual' ? 'bg-primary-600 text-white' : 'text-secondary-700 hover:bg-secondary-100'"
-            :aria-pressed="billingCycle === 'annual'"
-            @click="billingCycle = 'annual'"
-          >
-            Annual
-            <span class="absolute -top-2 -right-2 bg-green-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">Save</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Pricing Cards -->
+      <!-- Plan Cards -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <article
-          v-for="tier in pricingTiers"
+          v-for="tier in plans"
           :key="tier.id"
           class="rounded-2xl border shadow-sm p-8 flex flex-col relative"
           :class="tier.popular
@@ -78,15 +31,9 @@ const savingsPercent = (tier) => {
 
           <h2 class="text-2xl font-bold text-secondary-900 mb-2">{{ tier.name }}</h2>
 
-          <div class="mb-6">
-            <p class="flex items-end gap-2">
-              <span class="text-4xl font-extrabold text-secondary-900" :data-testid="`price-${tier.id}`">{{ formatPrice(tier) }}</span>
-              <span class="text-sm text-secondary-500 pb-1">{{ priceSuffix }}</span>
-            </p>
-            <p v-if="billingCycle === 'annual'" class="text-sm text-green-600 font-medium mt-1">
-              Save {{ savingsPercent(tier) }}% vs quarterly
-            </p>
-          </div>
+          <p class="mb-6 text-lg font-semibold text-primary-700" :data-testid="`pricing-contact-${tier.id}`">
+            Contact us for pricing
+          </p>
 
           <ul class="space-y-3 text-sm text-secondary-700 mb-8 flex-1">
             <li v-for="feature in tier.features" :key="feature" class="flex items-start gap-2">
@@ -99,7 +46,7 @@ const savingsPercent = (tier) => {
           </ul>
 
           <a
-            href="#contact"
+            href="/#contact"
             class="w-full text-center py-3 px-6 rounded-lg font-semibold transition-colors duration-200"
             :class="tier.popular
               ? 'bg-primary-600 hover:bg-primary-700 text-white shadow-lg'
@@ -110,11 +57,6 @@ const savingsPercent = (tier) => {
         </article>
       </div>
 
-      <!-- Tax disclaimer -->
-      <p class="mt-8 text-center text-sm text-secondary-500">
-        * All prices are exclusive of GST. Applicable taxes will be charged additionally.
-      </p>
-
       <!-- FAQ-like note -->
       <div class="mt-16 text-center">
         <div class="inline-block bg-white rounded-xl border border-secondary-200 p-6 max-w-2xl">
@@ -124,7 +66,7 @@ const savingsPercent = (tier) => {
             including dedicated support, custom integrations, and SLA guarantees.
           </p>
           <a href="/#contact" class="text-primary-600 font-semibold hover:text-primary-700 transition-colors">
-            Contact us for a custom quote →
+            Contact us to discuss your requirements →
           </a>
         </div>
       </div>

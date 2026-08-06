@@ -21,8 +21,8 @@ const router = createRouter({
       name: 'pricing',
       component: PricingPage,
       meta: {
-        title: 'Pricing — OroB Lite, Plus & Max Plans | Xaurum Fintech',
-        description: 'Choose the right OroB plan for your bullion business. Lite, Plus, and Max subscriptions with quarterly and annual billing. GST additional.',
+        title: 'OroB Lite, Plus & Max Plans | Xaurum Fintech',
+        description: 'Explore OroB Lite, Plus, and Max plans for your bullion business. Contact Xaurum Fintech for personalised pricing.',
       },
     },
     {

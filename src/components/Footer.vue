@@ -43,7 +43,7 @@
           <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
           <ul class="space-y-3">
             <li><RouterLink to="/" class="text-secondary-300 hover:text-primary-400 transition-colors">Home</RouterLink></li>
-            <li><RouterLink to="/pricing" class="text-secondary-300 hover:text-primary-400 transition-colors">Pricing</RouterLink></li>
+            <li><RouterLink to="/pricing" class="text-secondary-300 hover:text-primary-400 transition-colors">Plans</RouterLink></li>
             <li><RouterLink to="/about" class="text-secondary-300 hover:text-primary-400 transition-colors">About</RouterLink></li>
             <li><RouterLink to="/team" class="text-secondary-300 hover:text-primary-400 transition-colors">Team</RouterLink></li>
             <li><a href="/#contact" class="text-secondary-300 hover:text-primary-400 transition-colors">Contact</a></li>

@@ -14,7 +14,7 @@
         <div class="hidden md:block">
           <div class="ml-10 flex items-baseline space-x-8">
             <RouterLink to="/" class="text-secondary-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">Home</RouterLink>
-            <RouterLink to="/pricing" class="text-secondary-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">Pricing</RouterLink>
+            <RouterLink to="/pricing" class="text-secondary-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">Plans</RouterLink>
             <RouterLink to="/about" class="text-secondary-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">About</RouterLink>
             <RouterLink to="/team" class="text-secondary-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">Team</RouterLink>
             <a href="/#contact" class="text-secondary-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">Contact</a>
@@ -47,7 +47,7 @@
     <div v-show="mobileMenuOpen" class="md:hidden">
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
         <RouterLink to="/" class="text-secondary-700 hover:text-primary-600 block px-3 py-2 text-base font-medium" @click="mobileMenuOpen = false">Home</RouterLink>
-        <RouterLink to="/pricing" class="text-secondary-700 hover:text-primary-600 block px-3 py-2 text-base font-medium" @click="mobileMenuOpen = false">Pricing</RouterLink>
+        <RouterLink to="/pricing" class="text-secondary-700 hover:text-primary-600 block px-3 py-2 text-base font-medium" @click="mobileMenuOpen = false">Plans</RouterLink>
         <RouterLink to="/about" class="text-secondary-700 hover:text-primary-600 block px-3 py-2 text-base font-medium" @click="mobileMenuOpen = false">About</RouterLink>
         <RouterLink to="/team" class="text-secondary-700 hover:text-primary-600 block px-3 py-2 text-base font-medium" @click="mobileMenuOpen = false">Team</RouterLink>
         <a href="/#contact" class="text-secondary-700 hover:text-primary-600 block px-3 py-2 text-base font-medium" @click="mobileMenuOpen = false">Contact</a>

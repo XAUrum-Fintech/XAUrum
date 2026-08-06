@@ -1,9 +1,7 @@
-export const pricingTiers = [
+export const plans = [
   {
     id: 'lite',
     name: 'Lite',
-    quarterlyPrice: 5000,
-    annualPrice: 16000,
     popular: false,
     features: [
       'Website for live bullion price streaming',
@@ -11,13 +9,11 @@ export const pricingTiers = [
       'Product creation',
       'Price formula engine',
     ],
-    ctaLabel: 'Get Started',
+    ctaLabel: 'Contact us for pricing',
   },
   {
     id: 'plus',
     name: 'Plus',
-    quarterlyPrice: 15000,
-    annualPrice: 48000,
     popular: true,
     features: [
       'Everything in Lite, plus:',
@@ -32,13 +28,11 @@ export const pricingTiers = [
       'Mobile apps - common',
       'Dealing desk',
     ],
-    ctaLabel: 'Choose Plus',
+    ctaLabel: 'Contact us for pricing',
   },
   {
     id: 'max',
     name: 'Max',
-    quarterlyPrice: 25000,
-    annualPrice: 80000,
     popular: false,
     features: [
       'Everything in Plus, plus:',
@@ -50,6 +44,6 @@ export const pricingTiers = [
       'Purchase management',
       'Full-fledged back office',
     ],
-    ctaLabel: 'Go Max',
+    ctaLabel: 'Contact us for pricing',
   },
 ]

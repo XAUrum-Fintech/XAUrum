@@ -5,20 +5,20 @@ Standalone marketing website repository for Xaurum Fintech Pvt Ltd.
 ## Scope Implemented
 
 - Separate repository outside the Orob monorepo.
-- Baseline landing website with Home, Pricing, and About pages.
-- Pricing page with exactly 3 tiers and monthly/annual toggle.
+- Baseline landing website with Home, Plans, and About pages.
+- Plans page with three product tiers and contact-based pricing enquiries.
 - CI workflow for test + production build.
 - Publish-ready environment placeholders and deployment steps.
 
 ## Routes
 
 - `/` Home
-- `/pricing` Pricing
+- `/pricing` Plans
 - `/about` About
 
-## Pricing Page
+## Plans Page
 
-The pricing page includes exactly three tiers:
+The plans page includes exactly three tiers:
 
 - Basic
 - Pro
@@ -26,15 +26,10 @@ The pricing page includes exactly three tiers:
 
 Each tier has:
 
-- `monthlyPrice`
-- `annualPrice`
 - `features[]`
 - `ctaLabel`
 
-Billing toggle supports:
-
-- Monthly view
-- Annual view
+Subscription prices are not published on the website. Visitors are directed to the contact form for personalised pricing.
 
 ## Local Setup
 

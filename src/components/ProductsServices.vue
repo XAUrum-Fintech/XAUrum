@@ -106,7 +106,7 @@
             Request a Demo
           </a>
           <RouterLink to="/pricing" class="btn-outline text-lg px-8 py-4">
-            See Pricing Plans
+            Compare Plans
           </RouterLink>
         </div>
       </div>
