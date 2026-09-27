@@ -8,12 +8,11 @@ Standalone marketing website for Xaurum Fintech Private Limited and its orob pro
 - **orob Desk** — a hosted live-rate platform for bullions to stream their own prices to customers.
 - **orob Sync** — keeps a business's Tally Prime books in sync.
 
-The site includes consumer-app screenshots, while orob Desk uses an illustration until its product UI is redesigned.
+The public site keeps orob Desk on an illustration until its product UI is redesigned.
 
 ## Routes
 
 - `/` Home
-- `/orob` orob
 - `/orob-desk` orob Desk
 - `/orob-sync` orob Sync
 - `/company` Company

@@ -3,7 +3,7 @@
 ## Project Structure & Module Organization
 The app is a Vue 3 + Vite marketing site.
 - `src/main.js` boots the app; `src/App.vue` is the shell.
-- `src/router/index.js` defines routes: `/`, `/orob`, `/orob-desk`, `/orob-sync`, `/company`, `/support`, plus a catch-all 404.
+- `src/router/index.js` defines routes: `/`, `/orob-desk`, `/orob-sync`, `/company`, `/support`, plus a catch-all 404.
 - `src/pages/` contains route-level views.
 - `src/components/` contains reusable UI sections.
 - `src/**/*.test.js` contains Vitest specs (currently page-focused).
