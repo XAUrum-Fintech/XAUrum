@@ -3,7 +3,7 @@
     <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
       <h1 class="text-3xl md:text-4xl font-semibold text-secondary-900 mb-4">Company</h1>
       <p class="text-lg text-secondary-600">
-        Xaurum Fintech builds software for India's bullion trade — orob, orob Desk and orob Sync.
+        Xaurum Fintech builds software for India's bullion trade — orob Desk and orob Sync.
       </p>
     </section>
 

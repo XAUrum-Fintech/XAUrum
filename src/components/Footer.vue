@@ -33,7 +33,6 @@
         <div>
           <h3 class="text-sm font-semibold text-secondary-200 mb-4">Products</h3>
           <ul class="space-y-3 text-sm">
-            <li><RouterLink to="/orob" class="text-secondary-300 hover:text-primary-300 transition-colors">orob</RouterLink></li>
             <li><RouterLink to="/orob-desk" class="text-secondary-300 hover:text-primary-300 transition-colors">orob Desk</RouterLink></li>
             <li><RouterLink to="/orob-sync" class="text-secondary-300 hover:text-primary-300 transition-colors">orob Sync</RouterLink></li>
           </ul>
@@ -44,8 +43,6 @@
           <ul class="space-y-3 text-sm">
             <li><RouterLink to="/company" class="text-secondary-300 hover:text-primary-300 transition-colors">About &amp; contact</RouterLink></li>
             <li><RouterLink to="/support" class="text-secondary-300 hover:text-primary-300 transition-colors">Support</RouterLink></li>
-            <li><a href="/orob/privacy/" class="text-secondary-300 hover:text-primary-300 transition-colors">Privacy policy</a></li>
-            <li><a href="/orob/terms/" class="text-secondary-300 hover:text-primary-300 transition-colors">Terms</a></li>
           </ul>
         </div>
       </div>
@@ -54,11 +51,6 @@
         <div class="flex flex-col md:flex-row justify-between items-center gap-4">
           <div class="text-secondary-400 text-sm">
             &copy; {{ currentYear }} Xaurum Fintech Private Limited. All rights reserved.
-          </div>
-          <div class="flex gap-6 text-sm">
-            <a href="/orob/privacy/" class="text-secondary-400 hover:text-white transition-colors">Privacy</a>
-            <a href="/orob/terms/" class="text-secondary-400 hover:text-white transition-colors">Terms</a>
-            <a href="/orob/delete-account/" class="text-secondary-400 hover:text-white transition-colors">Delete account</a>
           </div>
         </div>
       </div>

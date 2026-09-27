@@ -32,4 +32,9 @@ describe('legal pages', () => {
       expect(html).toContain('support@xaurum.in')
     }
   })
+
+  it.each(legalPages)('$path is marked noindex so it stays unlisted before the orob app launches', ({ path }) => {
+    const html = readFileSync(join(publicDir, path), 'utf-8')
+    expect(html).toMatch(/<meta\s+name="robots"\s+content="noindex"\s*\/?>/)
+  })
 })

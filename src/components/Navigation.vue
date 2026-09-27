@@ -8,7 +8,6 @@
         </RouterLink>
 
         <div class="hidden md:flex items-baseline gap-6">
-          <RouterLink to="/orob" class="text-secondary-600 hover:text-primary-600 text-sm font-medium transition-colors">orob</RouterLink>
           <RouterLink to="/orob-desk" class="text-secondary-600 hover:text-primary-600 text-sm font-medium transition-colors">orob Desk</RouterLink>
           <RouterLink to="/orob-sync" class="text-secondary-600 hover:text-primary-600 text-sm font-medium transition-colors">orob Sync</RouterLink>
           <RouterLink to="/company" class="text-secondary-600 hover:text-primary-600 text-sm font-medium transition-colors">Company</RouterLink>
@@ -32,7 +31,6 @@
 
     <div v-show="mobileMenuOpen" class="md:hidden">
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[var(--surface)] border-t border-secondary-200">
-        <RouterLink to="/orob" class="text-secondary-700 hover:text-primary-600 block px-3 py-2 text-base font-medium" @click="mobileMenuOpen = false">orob</RouterLink>
         <RouterLink to="/orob-desk" class="text-secondary-700 hover:text-primary-600 block px-3 py-2 text-base font-medium" @click="mobileMenuOpen = false">orob Desk</RouterLink>
         <RouterLink to="/orob-sync" class="text-secondary-700 hover:text-primary-600 block px-3 py-2 text-base font-medium" @click="mobileMenuOpen = false">orob Sync</RouterLink>
         <RouterLink to="/company" class="text-secondary-700 hover:text-primary-600 block px-3 py-2 text-base font-medium" @click="mobileMenuOpen = false">Company</RouterLink>

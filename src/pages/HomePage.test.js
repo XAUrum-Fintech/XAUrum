@@ -10,12 +10,11 @@ describe('HomePage', () => {
     )
   })
 
-  it('shows one card per product', () => {
+  it('shows one card per publicly announced product', () => {
     const wrapper = mount(HomePage)
     const cards = wrapper.findAll('[data-testid="product-card"]')
-    expect(cards).toHaveLength(3)
+    expect(cards).toHaveLength(2)
     const text = wrapper.text()
-    expect(text).toContain('orob')
     expect(text).toContain('orob Desk')
     expect(text).toContain('orob Sync')
   })

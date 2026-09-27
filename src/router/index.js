@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 const HomePage = () => import('@/pages/HomePage.vue')
-const OrobPage = () => import('@/pages/OrobPage.vue')
 const OrobDeskPage = () => import('@/pages/OrobDeskPage.vue')
 const OrobSyncPage = () => import('@/pages/OrobSyncPage.vue')
 const CompanyPage = () => import('@/pages/CompanyPage.vue')
@@ -17,16 +16,7 @@ const router = createRouter({
       component: HomePage,
       meta: {
         title: 'Xaurum Fintech',
-        description: 'Xaurum Fintech builds software for India\'s bullion trade: orob, orob Desk and orob Sync.',
-      },
-    },
-    {
-      path: '/orob',
-      name: 'orob',
-      component: OrobPage,
-      meta: {
-        title: 'orob — compare bullion prices | Xaurum Fintech',
-        description: 'orob is a free app to compare live gold and silver prices across bullions.',
+        description: 'Xaurum Fintech builds software for India\'s bullion trade: orob Desk and orob Sync.',
       },
     },
     {
@@ -62,7 +52,7 @@ const router = createRouter({
       component: SupportPage,
       meta: {
         title: 'Support | Xaurum Fintech',
-        description: 'Get help with orob, orob Desk or orob Sync.',
+        description: 'Get help with orob Desk or orob Sync.',
       },
     },
     {
