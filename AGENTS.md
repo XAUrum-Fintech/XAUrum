@@ -26,7 +26,7 @@ Use Node `^20.19.0 || >=22.12.0` as defined in `package.json`.
 - Use 2-space indentation in JS/Vue files.
 - Prefer single quotes and no semicolons in JS, matching existing files.
 - Use PascalCase for Vue SFC filenames (`HomePage.vue`, `HeroSection.vue`).
-- Keep route names lowercase in router config (`name: 'pricing'`).
+- Keep route names lowercase in router config (`name: 'orob-desk'`).
 - Use the `@/` alias for imports from `src/`.
 - Prefer Tailwind utility classes and shared theme tokens from `src/style.css`.
 - Keep test selectors stable with `data-testid` for interaction/assertion points.

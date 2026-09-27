@@ -1,35 +1,25 @@
-# Xaurum Fintech Pvt Ltd Website
+# Xaurum Fintech Website
 
-Standalone marketing website repository for Xaurum Fintech Pvt Ltd.
+Standalone marketing website for Xaurum Fintech Private Limited and its orob product family.
 
-## Scope Implemented
+## Product family
 
-- Separate repository outside the Orob monorepo.
-- Baseline landing website with Home, Plans, and About pages.
-- Plans page with three product tiers and contact-based pricing enquiries.
-- CI workflow for test + production build.
-- Publish-ready environment placeholders and deployment steps.
+- **orob** — a free consumer app for comparing live gold and silver prices across bullions.
+- **orob Desk** — a hosted live-rate platform for bullions to stream their own prices to customers.
+- **orob Sync** — keeps a business's Tally Prime books in sync.
+
+The site includes consumer-app screenshots, while orob Desk uses an illustration until its product UI is redesigned.
 
 ## Routes
 
 - `/` Home
-- `/pricing` Plans
-- `/about` About
+- `/orob` orob
+- `/orob-desk` orob Desk
+- `/orob-sync` orob Sync
+- `/company` Company
+- `/support` Support
 
-## Plans Page
-
-The plans page includes exactly three tiers:
-
-- Basic
-- Pro
-- Enterprise
-
-Each tier has:
-
-- `features[]`
-- `ctaLabel`
-
-Subscription prices are not published on the website. Visitors are directed to the contact form for personalised pricing.
+The `/orob/{privacy,terms,delete-account,support}/` paths are static, JavaScript-free legal and support pages copied directly from `public/` into the build output.
 
 ## Local Setup
 
@@ -76,9 +66,10 @@ Workflow: `.github/workflows/ci.yml`
 3. Publish directory: `dist`
 4. Configure env variables from `.env.example`
 
-### GitHub Pages + GoDaddy Custom Domain
+### GitHub Pages + Custom Domain
 
 This repo includes `.github/workflows/deploy-pages.yml` to deploy on every push to `main`.
+The current custom domain is `xaurum.in` (from `public/CNAME`); the workflow also supports an optional `CUSTOM_DOMAIN` repository variable.
 
 1. In GitHub: `Settings -> Pages`, set `Source` to `GitHub Actions`.
 2. In GitHub: `Settings -> Secrets and variables -> Actions -> Variables`, add:
