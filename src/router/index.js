@@ -1,8 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import AboutPage from '@/pages/AboutPage.vue'
-import HomePage from '@/pages/HomePage.vue'
-import PricingPage from '@/pages/PricingPage.vue'
-import TeamPage from '@/pages/TeamPage.vue'
+
+const HomePage = () => import('@/pages/HomePage.vue')
+const OrobDeskPage = () => import('@/pages/OrobDeskPage.vue')
+const OrobSyncPage = () => import('@/pages/OrobSyncPage.vue')
+const CompanyPage = () => import('@/pages/CompanyPage.vue')
+const SupportPage = () => import('@/pages/SupportPage.vue')
+const NotFoundPage = () => import('@/pages/NotFoundPage.vue')
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,35 +15,53 @@ const router = createRouter({
       name: 'home',
       component: HomePage,
       meta: {
-        title: 'Xaurum Fintech — OroB Bullion Trading Platform',
-        description: 'OroB by Xaurum Fintech — a modern, cloud-native bullion trading platform for Indian bullion wholesalers and dealers. Real-time pricing, order management, and risk controls.',
+        title: 'Xaurum Fintech',
+        description: 'Xaurum Fintech builds software for India\'s bullion trade: orob Desk and orob Sync.',
       },
     },
     {
-      path: '/pricing',
-      name: 'pricing',
-      component: PricingPage,
+      path: '/orob-desk',
+      name: 'orob-desk',
+      component: OrobDeskPage,
       meta: {
-        title: 'OroB Lite, Plus & Max Plans | Xaurum Fintech',
-        description: 'Explore OroB Lite, Plus, and Max plans for your bullion business. Contact Xaurum Fintech for personalised pricing.',
+        title: 'orob Desk — stream your own prices | Xaurum Fintech',
+        description: 'orob Desk is a hosted live-rate platform for bullions who want to stream their own prices to their customers.',
       },
     },
     {
-      path: '/about',
-      name: 'about',
-      component: AboutPage,
+      path: '/orob-sync',
+      name: 'orob-sync',
+      component: OrobSyncPage,
       meta: {
-        title: 'About Us — Xaurum Fintech Pvt Ltd',
-        description: 'Xaurum Fintech is building the technology backbone for India\'s bullion industry — replacing fragmented legacy systems with modern, reliable software.',
+        title: 'orob Sync — keep your books in sync | Xaurum Fintech',
+        description: 'orob Sync keeps your business\'s accounting books in sync automatically.',
       },
     },
     {
-      path: '/team',
-      name: 'team',
-      component: TeamPage,
+      path: '/company',
+      name: 'company',
+      component: CompanyPage,
       meta: {
-        title: 'Our Team — Xaurum Fintech',
-        description: 'Meet the team behind Xaurum Fintech and OroB — experts in technology, finance, and the Indian bullion industry.',
+        title: 'Company | Xaurum Fintech',
+        description: 'About Xaurum Fintech Private Limited and how to reach us.',
+      },
+    },
+    {
+      path: '/support',
+      name: 'support',
+      component: SupportPage,
+      meta: {
+        title: 'Support | Xaurum Fintech',
+        description: 'Get help with orob Desk or orob Sync.',
+      },
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: NotFoundPage,
+      meta: {
+        title: 'Page not found | Xaurum Fintech',
+        description: 'The page you are looking for could not be found.',
       },
     },
   ],
