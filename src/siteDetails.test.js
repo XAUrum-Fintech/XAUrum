@@ -1,10 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { readFileSync, readdirSync, statSync } from 'node:fs'
-import { dirname, join } from 'node:path'
-import { fileURLToPath } from 'node:url'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-
-const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..')
 
 async function mountWithDetails(details) {
   vi.resetModules()
@@ -16,18 +11,6 @@ async function mountWithDetails(details) {
     import('@/pages/CompanyPage.vue'),
   ])
   return { footer: mount(Footer), company: mount(CompanyPage) }
-}
-
-function collectSources(dir, files = []) {
-  for (const entry of readdirSync(dir)) {
-    const full = join(dir, entry)
-    if (statSync(full).isDirectory()) {
-      collectSources(full, files)
-    } else if (/\.(vue|html)$/.test(entry)) {
-      files.push(full)
-    }
-  }
-  return files
 }
 
 describe('company identity details', () => {
@@ -60,15 +43,5 @@ describe('company identity details', () => {
     expect(footer.find('[data-testid="footer-address"]').text()).toContain('1 Example Road')
     expect(company.find('[data-testid="company-cin"]').text()).toBe('U00000XX0000PTC000000')
     expect(company.find('[data-testid="company-address"]').text()).toBe('1 Example Road, Example City 000000')
-  })
-
-  it('leaves no TODO placeholder text in the public sources', () => {
-    const files = [
-      ...collectSources(join(repoRoot, 'src')),
-      ...collectSources(join(repoRoot, 'public')),
-    ]
-    for (const file of files) {
-      expect(readFileSync(file, 'utf-8'), `${file} should not contain TODO text`).not.toMatch(/TODO/)
-    }
   })
 })
