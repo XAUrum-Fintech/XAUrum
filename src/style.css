@@ -43,21 +43,6 @@
   --accent-ink: #0B5E6D;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --canvas: #0B0C0E;
-    --surface: #15171A;
-    --surface-2: #111316;
-    --line: #25282D;
-    --ink: #F2F3F5;
-    --ink-2: #9A9EA7;
-    --ink-3: #7C8089;
-    --accent: #5FC6D3;
-    --accent-soft: #0E3036;
-    --accent-ink: #8FDCE6;
-  }
-}
-
 @layer base {
   html {
     font-family: var(--font-family-sans);
