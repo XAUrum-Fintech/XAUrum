@@ -13,15 +13,15 @@
         <dl class="space-y-3 text-sm">
           <div>
             <dt class="text-secondary-500">Legal name</dt>
-            <dd class="text-secondary-900 font-medium" data-testid="company-legal-name">Xaurum Fintech Private Limited</dd>
+            <dd class="text-secondary-900 font-medium" data-testid="company-legal-name">{{ siteDetails.legalName }}</dd>
           </div>
-          <div>
+          <div v-if="siteDetails.cin">
             <dt class="text-secondary-500">CIN</dt>
-            <dd class="text-secondary-900 font-medium italic" data-testid="company-cin">TODO — add company CIN</dd>
+            <dd class="text-secondary-900 font-medium" data-testid="company-cin">{{ siteDetails.cin }}</dd>
           </div>
-          <div>
+          <div v-if="siteDetails.registeredAddress">
             <dt class="text-secondary-500">Registered address</dt>
-            <dd class="text-secondary-900 font-medium italic" data-testid="company-address">TODO — add registered address</dd>
+            <dd class="text-secondary-900 font-medium" data-testid="company-address">{{ siteDetails.registeredAddress }}</dd>
           </div>
         </dl>
       </div>
@@ -42,3 +42,7 @@
     </section>
   </main>
 </template>
+
+<script setup>
+import { siteDetails } from '@/data/siteDetails'
+</script>

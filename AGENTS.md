@@ -9,6 +9,7 @@ The app is a Vue 3 + Vite marketing site.
 - `src/**/*.test.js` contains Vitest specs (currently page-focused).
 - `public/` stores static assets, plus static (JS-free) legal pages at `public/orob/{privacy,terms,delete-account,support}/index.html` — Vite copies these verbatim into `dist/`, and GitHub Pages serves them directly without going through the SPA. Their legal text is copied verbatim from the Orob mobile app (`consumer_legal_copy.dart`); do not reword it without bumping the version/date shown on the page.
 - Product family: **orob** (free consumer app), **orob Desk** (hosted live-rate platform for bullions — never say "dealer" anywhere in its copy), **orob Sync** (keeps a business's books in sync with Tally Prime). The site never names an individual person; `src/noPersonNames.test.js` guards this.
+- Company CIN and registered address come from `src/data/siteDetails.js` (`VITE_COMPANY_CIN`, `VITE_COMPANY_ADDRESS`); each line stays hidden on the site until a value is set, so never put placeholder text on public pages.
 - Design tokens (colour, type, spacing) in `src/style.css` follow the orob design system; see the Orob repo's `docs/design/orob-consumer/README.md` for the canonical source if tokens need to change.
 - Root config lives in files like `vite.config.js`, `tailwind.config.js`, and `postcss.config.js`.
 

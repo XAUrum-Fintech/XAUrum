@@ -9,13 +9,13 @@
           </div>
 
           <p class="text-secondary-300 mb-4 max-w-md text-sm" data-testid="footer-legal-name">
-            Xaurum Fintech Private Limited
+            {{ siteDetails.legalName }}
           </p>
-          <p class="text-secondary-400 text-sm mb-1" data-testid="footer-cin">
-            CIN: <span class="italic">TODO — add company CIN</span>
+          <p v-if="siteDetails.cin" class="text-secondary-400 text-sm mb-1" data-testid="footer-cin">
+            CIN: {{ siteDetails.cin }}
           </p>
-          <p class="text-secondary-400 text-sm mb-6" data-testid="footer-address">
-            Registered address: <span class="italic">TODO — add registered address</span>
+          <p v-if="siteDetails.registeredAddress" class="text-secondary-400 text-sm mb-6" data-testid="footer-address">
+            Registered address: {{ siteDetails.registeredAddress }}
           </p>
 
           <div class="space-y-2 text-secondary-300 text-sm">
@@ -60,6 +60,7 @@
 
 <script setup>
 import { computed } from 'vue'
+import { siteDetails } from '@/data/siteDetails'
 
 const currentYear = computed(() => new Date().getFullYear())
 </script>
