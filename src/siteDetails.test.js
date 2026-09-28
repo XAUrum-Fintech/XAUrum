@@ -23,7 +23,7 @@ describe('company identity details', () => {
     Object.assign(details, { cin: '', registeredAddress: '' })
   })
 
-  it('hides the CIN and address lines while no value is configured', () => {
+  it('hides the CIN and address lines when no value is set', () => {
     const { footer, company } = mountWithDetails({})
 
     for (const wrapper of [footer, company]) {
@@ -47,5 +47,14 @@ describe('company identity details', () => {
     expect(footer.find('[data-testid="footer-address"]').text()).toContain('1 Example Road')
     expect(company.find('[data-testid="company-cin"]').text()).toBe('U00000XX0000PTC000000')
     expect(company.find('[data-testid="company-address"]').text()).toBe('1 Example Road, Example City 000000')
+  })
+
+  it('shows the CIN but hides the address when only the CIN is set', () => {
+    const { footer, company } = mountWithDetails({ cin: 'U62010TZ2026PTC037387' })
+
+    expect(footer.find('[data-testid="footer-cin"]').text()).toContain('U62010TZ2026PTC037387')
+    expect(company.find('[data-testid="company-cin"]').text()).toBe('U62010TZ2026PTC037387')
+    expect(footer.find('[data-testid="footer-address"]').exists()).toBe(false)
+    expect(company.find('[data-testid="company-address"]').exists()).toBe(false)
   })
 })
