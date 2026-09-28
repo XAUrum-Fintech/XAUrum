@@ -1,26 +1,30 @@
 import { mount } from '@vue/test-utils'
-import { afterEach, describe, expect, it, vi } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
+import Footer from '@/components/Footer.vue'
+import CompanyPage from '@/pages/CompanyPage.vue'
 
-async function mountWithDetails(details) {
-  vi.resetModules()
-  vi.doMock('@/data/siteDetails', () => ({
-    siteDetails: { legalName: 'Xaurum Fintech Private Limited', ...details },
-  }))
-  const [{ default: Footer }, { default: CompanyPage }] = await Promise.all([
-    import('@/components/Footer.vue'),
-    import('@/pages/CompanyPage.vue'),
-  ])
+// One shared mock object, hoisted above the imports and mutated before each mount,
+// so the components always read these values (no module resets or dynamic imports).
+const details = vi.hoisted(() => ({
+  legalName: 'Xaurum Fintech Private Limited',
+  cin: '',
+  registeredAddress: '',
+}))
+
+vi.mock('@/data/siteDetails', () => ({ siteDetails: details }))
+
+function mountWithDetails(values) {
+  Object.assign(details, { cin: '', registeredAddress: '' }, values)
   return { footer: mount(Footer), company: mount(CompanyPage) }
 }
 
 describe('company identity details', () => {
-  afterEach(() => {
-    vi.doUnmock('@/data/siteDetails')
-    vi.resetModules()
+  beforeEach(() => {
+    Object.assign(details, { cin: '', registeredAddress: '' })
   })
 
-  it('hides the CIN and address lines while no value is configured', async () => {
-    const { footer, company } = await mountWithDetails({ cin: '', registeredAddress: '' })
+  it('hides the CIN and address lines while no value is configured', () => {
+    const { footer, company } = mountWithDetails({})
 
     for (const wrapper of [footer, company]) {
       expect(wrapper.find('[data-testid="footer-cin"]').exists()).toBe(false)
@@ -33,8 +37,8 @@ describe('company identity details', () => {
     expect(company.find('[data-testid="company-legal-name"]').text()).toBe('Xaurum Fintech Private Limited')
   })
 
-  it('shows the CIN and address once values are configured', async () => {
-    const { footer, company } = await mountWithDetails({
+  it('shows the CIN and address once values are configured', () => {
+    const { footer, company } = mountWithDetails({
       cin: 'U00000XX0000PTC000000',
       registeredAddress: '1 Example Road, Example City 000000',
     })
