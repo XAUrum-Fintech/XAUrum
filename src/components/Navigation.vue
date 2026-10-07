@@ -1,47 +1,72 @@
 <template>
-  <nav class="bg-[var(--surface)]/95 backdrop-blur-sm border-b border-secondary-200/60 fixed w-full top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
-        <RouterLink to="/" class="flex-shrink-0 flex items-center gap-2" data-testid="nav-brand">
-          <img src="/logo.svg" alt="" aria-hidden="true" class="w-8 h-8" />
-          <span class="text-lg font-semibold text-secondary-900">Xaurum Fintech</span>
-        </RouterLink>
+  <nav class="relative" aria-label="Main">
+    <div class="container-x flex items-center gap-3 py-3 min-[900px]:gap-[44px]">
+      <RouterLink to="/" data-testid="nav-brand">
+        <BrandLogo on-dark />
+      </RouterLink>
 
-        <div class="hidden md:flex items-baseline gap-6">
-          <RouterLink to="/orob-desk" class="text-secondary-600 hover:text-primary-600 text-sm font-medium transition-colors">orob Desk</RouterLink>
-          <RouterLink to="/orob-sync" class="text-secondary-600 hover:text-primary-600 text-sm font-medium transition-colors">orob Sync</RouterLink>
-          <RouterLink to="/company" class="text-secondary-600 hover:text-primary-600 text-sm font-medium transition-colors">Company</RouterLink>
-          <RouterLink to="/support" class="text-secondary-600 hover:text-primary-600 text-sm font-medium transition-colors">Support</RouterLink>
-        </div>
-
-        <div class="md:hidden">
-          <button
-            @click="mobileMenuOpen = !mobileMenuOpen"
-            aria-label="Toggle navigation menu"
-            class="inline-flex items-center justify-center p-2 rounded-md text-secondary-600 hover:bg-secondary-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
-          >
-            <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-              <path v-if="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-              <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
+      <div class="hidden gap-[30px] text-sm font-semibold min-[900px]:flex">
+        <SectionLink
+          v-for="link in links"
+          :key="link.label"
+          :to="link.to"
+          class="transition-colors hover:text-white"
+          :class="link.active ? 'text-white' : 'text-secondary-300'"
+          :aria-current="link.active ? 'page' : undefined"
+        >{{ link.label }}</SectionLink>
       </div>
+
+      <SectionLink
+        :to="contactTo"
+        class="ml-auto whitespace-nowrap rounded-lg bg-white px-[18px] py-2.5 text-sm font-bold text-secondary-900 transition-colors hover:bg-secondary-100"
+        data-testid="nav-contact"
+      >Contact us</SectionLink>
+
+      <button
+        type="button"
+        class="-mr-2 inline-flex items-center justify-center rounded-lg p-2 text-secondary-300 transition-colors hover:text-white min-[900px]:hidden"
+        :aria-expanded="mobileMenuOpen ? 'true' : 'false'"
+        aria-controls="mobile-menu"
+        aria-label="Toggle navigation menu"
+        @click="mobileMenuOpen = !mobileMenuOpen"
+      >
+        <LucideIcon :name="mobileMenuOpen ? 'x' : 'menu'" :size="22" :stroke-width="2" />
+      </button>
     </div>
 
-    <div v-show="mobileMenuOpen" class="md:hidden">
-      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[var(--surface)] border-t border-secondary-200">
-        <RouterLink to="/orob-desk" class="text-secondary-700 hover:text-primary-600 block px-3 py-2 text-base font-medium" @click="mobileMenuOpen = false">orob Desk</RouterLink>
-        <RouterLink to="/orob-sync" class="text-secondary-700 hover:text-primary-600 block px-3 py-2 text-base font-medium" @click="mobileMenuOpen = false">orob Sync</RouterLink>
-        <RouterLink to="/company" class="text-secondary-700 hover:text-primary-600 block px-3 py-2 text-base font-medium" @click="mobileMenuOpen = false">Company</RouterLink>
-        <RouterLink to="/support" class="text-secondary-700 hover:text-primary-600 block px-3 py-2 text-base font-medium" @click="mobileMenuOpen = false">Support</RouterLink>
+    <div v-show="mobileMenuOpen" id="mobile-menu" class="container-x pb-4 min-[900px]:hidden">
+      <div class="flex flex-col border-t border-white/10 pt-2">
+        <SectionLink
+          v-for="link in links"
+          :key="link.label"
+          :to="link.to"
+          class="py-2.5 text-[15px] font-semibold transition-colors hover:text-white"
+          :class="link.active ? 'text-white' : 'text-secondary-300'"
+          @click="mobileMenuOpen = false"
+        >{{ link.label }}</SectionLink>
       </div>
     </div>
   </nav>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+import BrandLogo from '@/components/BrandLogo.vue'
+import LucideIcon from '@/components/LucideIcon.vue'
+import SectionLink from '@/components/SectionLink.vue'
+
+const props = defineProps({
+  // Product pages highlight "Products" and point "Contact us" at their own contact band.
+  productsActive: { type: Boolean, default: false },
+  contactTo: { type: String, default: '/#contact' },
+})
 
 const mobileMenuOpen = ref(false)
+
+const links = computed(() => [
+  { label: 'Products', to: '/#products', active: props.productsActive },
+  { label: 'Company', to: '/#company' },
+  { label: 'Security', to: '/#security' },
+  { label: 'Support', to: '/support' },
+])
 </script>

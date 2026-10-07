@@ -3,4 +3,8 @@ import App from './App.vue'
 import './style.css'
 import router from './router'
 
-createApp(App).use(router).mount('#app')
+const app = createApp(App).use(router)
+
+// Mount once the first page has loaded, so the footer never renders above an empty page and then jumps.
+// Mount even if that load fails (e.g. a stale chunk after a redeploy), so the header and footer still show.
+router.isReady().finally(() => app.mount('#app'))

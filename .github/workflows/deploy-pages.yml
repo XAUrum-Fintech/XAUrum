@@ -48,6 +48,10 @@ jobs:
           fi
 
       - name: Build
+        env:
+          VITE_CONTACT_EMAIL: ${{ vars.VITE_CONTACT_EMAIL }}
+          VITE_CONTACT_FORM_KEY: ${{ vars.VITE_CONTACT_FORM_KEY }}
+          VITE_SHOW_CONSUMER_APP: ${{ vars.VITE_SHOW_CONSUMER_APP }}
         run: npm run build
 
       - name: Add GitHub Pages SPA fallback and optional CNAME
