@@ -18,7 +18,7 @@ The public site currently presents orob Desk and orob Sync. It keeps orob Desk o
 - `/company` Company
 - `/support` Support
 
-The `/orob/{privacy,terms,delete-account,support}/` paths are static, JavaScript-free legal and support pages copied directly from `public/` into the build output.
+The `/orob/{privacy,terms,delete-account,support}/` paths are static, JavaScript-free pages copied directly from `public/` into the build output. `/orob/privacy/` and `/orob/terms/` redirect to the canonical pages on orob.app; `/orob/delete-account/` and `/orob/support/` are served locally.
 
 ## Local Setup
 
