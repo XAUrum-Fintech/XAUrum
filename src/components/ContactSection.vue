@@ -72,8 +72,9 @@
       </form>
 
       <div v-else class="rounded-2xl bg-white p-10 text-[var(--fg-1)] shadow-2xl" data-testid="contact-success">
-        <h3 ref="thanksHeading" tabindex="-1" class="text-2xl font-bold tracking-[-0.02em] focus:outline-none">Thank you.</h3>
-        <p class="mt-2.5 text-base leading-[1.6] text-[var(--fg-3)]">Our team will reply from {{ contactEmail }}.</p>
+        <h3 ref="thanksHeading" tabindex="-1" class="text-2xl font-bold tracking-[-0.02em] focus:outline-none">{{ delivery === 'mailto' ? 'One more step.' : 'Thank you.' }}</h3>
+        <p v-if="delivery === 'mailto'" class="mt-2.5 text-base leading-[1.6] text-[var(--fg-3)]">Your email app should open with your message. Press Send to reach us at {{ contactEmail }}.</p>
+        <p v-else class="mt-2.5 text-base leading-[1.6] text-[var(--fg-3)]">Our team will reply from {{ contactEmail }}.</p>
         <button type="button" class="mt-5 inline-block text-sm font-bold text-primary-700 hover:text-primary-800" @click="reset">Send another enquiry</button>
       </div>
     </div>
@@ -98,6 +99,7 @@ function emptyForm() {
 
 const form = reactive(emptyForm())
 const sent = ref(false)
+const delivery = ref('')
 const sending = ref(false)
 const failed = ref(false)
 const formEl = useTemplateRef('formEl')
@@ -115,7 +117,8 @@ watch(
   { immediate: true, flush: 'post' },
 )
 
-async function showThanks() {
+async function showThanks(via) {
+  delivery.value = via
   sent.value = true
   await nextTick()
   thanksHeading.value?.focus()
@@ -132,7 +135,7 @@ async function submit() {
 
   sending.value = true
   try {
-    await sendEnquiry({
+    const result = await sendEnquiry({
       name: form.name,
       business: form.business,
       email: form.email,
@@ -140,7 +143,7 @@ async function submit() {
       interests: [...form.interests],
       message: form.message,
     })
-    await showThanks()
+    await showThanks(result.delivery)
   } catch {
     failed.value = true
   } finally {

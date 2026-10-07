@@ -1,6 +1,6 @@
 <template>
   <PageHeader title="Support">
-    Need help with orob Desk or orob Sync? Email us and we'll get back to you.
+    Need help with {{ productNameList('or') }}? Email us and we'll get back to you.
   </PageHeader>
 
   <main class="container-x py-24">
@@ -14,4 +14,5 @@
 <script setup>
 import PageHeader from '@/components/PageHeader.vue'
 import { supportEmail } from '@/data/contactSettings'
+import { productNameList } from '@/data/products'
 </script>

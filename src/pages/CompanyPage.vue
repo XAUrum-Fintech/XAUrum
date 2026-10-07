@@ -1,6 +1,6 @@
 <template>
   <PageHeader title="Company">
-    Xaurum Fintech builds software for India's bullion trade — orob Desk and orob Sync.
+    Xaurum Fintech builds software for India's bullion trade — {{ productNameList('and') }}.
   </PageHeader>
 
   <main class="container-x grid grid-cols-[repeat(auto-fit,minmax(min(100%,340px),1fr))] items-start gap-6 py-24">
@@ -39,5 +39,6 @@
 <script setup>
 import PageHeader from '@/components/PageHeader.vue'
 import { contactEmail, supportEmail } from '@/data/contactSettings'
+import { productNameList } from '@/data/products'
 import { siteDetails } from '@/data/siteDetails'
 </script>

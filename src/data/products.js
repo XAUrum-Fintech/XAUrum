@@ -33,3 +33,9 @@ export const products = allProducts.filter((product) => showConsumerApp || !prod
 export function productByKey(key) {
   return allProducts.find((product) => product.key === key)
 }
+
+// The shown product names as running text: "orob, orob Desk and orob Sync" (just the last two with the consumer app hidden).
+export function productNameList(conjunction) {
+  const names = products.map((product) => product.name)
+  return `${names.slice(0, -1).join(', ')} ${conjunction} ${names.at(-1)}`
+}

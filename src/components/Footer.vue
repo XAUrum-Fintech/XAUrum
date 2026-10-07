@@ -15,7 +15,7 @@
 
         <div class="flex flex-col gap-2.5 text-sm">
           <h2 class="text-xs font-bold tracking-[0.14em] text-[var(--fg-1)]">PRODUCTS</h2>
-          <RouterLink v-for="product in products" :key="product.key" :to="product.path" class="text-[var(--fg-3)] transition-colors hover:text-primary-800">{{ product.name }}</RouterLink>
+          <RouterLink v-for="product in footerProducts" :key="product.key" :to="product.path" class="text-[var(--fg-3)] transition-colors hover:text-primary-800">{{ product.name }}</RouterLink>
         </div>
 
         <div class="flex flex-col gap-2.5 text-sm">
@@ -50,6 +50,7 @@ import { siteDetails } from '@/data/siteDetails'
 
 const route = useRoute()
 const currentYear = new Date().getFullYear()
+const footerProducts = products.filter((product) => !product.consumer)
 
 // The homepage shows benchmark rates; product pages show illustrative ones.
 const note = computed(() => route?.meta?.footerNote ?? 'Benchmark rates shown are indicative.')

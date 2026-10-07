@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { productNameList } from '@/data/products'
 import { showConsumerApp } from '@/data/siteFlags'
 
 const HomePage = () => import('@/pages/HomePage.vue')
@@ -70,7 +71,7 @@ export const routes = [
     component: SupportPage,
     meta: {
       title: 'Support | Xaurum Fintech',
-      description: 'Get help with orob Desk or orob Sync.',
+      description: `Get help with ${productNameList('or')}.`,
     },
   },
   {

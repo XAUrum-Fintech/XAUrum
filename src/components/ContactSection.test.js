@@ -67,11 +67,26 @@ describe('ContactSection', () => {
     const thanks = wrapper.find('[data-testid="contact-success"]')
     expect(thanks.text()).toContain('Thank you.')
     expect(thanks.text()).toContain('Our team will reply from contact@xaurum.in.')
+    expect(thanks.text()).not.toContain('Press Send')
 
     await thanks.find('button').trigger('click')
     await flushPromises()
     expect(wrapper.find('form').exists()).toBe(true)
     expect(wrapper.find('input[name="name"]').element.value).toBe('')
+    wrapper.unmount()
+  })
+
+  it('asks the visitor to press Send when the enquiry was handed to their email app', async () => {
+    sendEnquiry.mockResolvedValue({ delivery: 'mailto' })
+    const wrapper = mount(ContactSection, { attachTo: document.body })
+    fill(wrapper)
+    await wrapper.find('form').trigger('submit')
+    await flushPromises()
+
+    const thanks = wrapper.find('[data-testid="contact-success"]')
+    expect(thanks.text()).toContain('Your email app should open with your message. Press Send to reach us at contact@xaurum.in.')
+    expect(thanks.text()).not.toContain('Thank you.')
+    expect(thanks.text()).not.toContain('Our team will reply')
     wrapper.unmount()
   })
 
