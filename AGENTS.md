@@ -6,7 +6,7 @@ The app is a Vue 3 + Vite marketing site.
 - `src/router/index.js` defines routes: `/`, `/orob`, `/orob-desk`, `/orob-sync`, `/company`, `/support`, plus a catch-all 404.
 - `src/pages/` contains route-level views.
 - `src/components/` contains reusable UI sections.
-- `src/**/*.test.js` contains Vitest specs (currently page-focused).
+- `src/**/*.test.js` contains Vitest specs.
 - `public/` stores static assets, plus static (JS-free) legal pages at `public/orob/{privacy,terms,delete-account,support}/index.html` — Vite copies these verbatim into `dist/`, and GitHub Pages serves them directly without going through the SPA. Privacy and terms point to the canonical pages on orob.app; delete-account and support remain local pages.
 - Product family: **orob** (free consumer app), **orob Desk** (hosted live-rate platform for bullions — never say "dealer" anywhere in its copy), **orob Sync** (keeps a business's books in sync with Tally Prime). The site never names an individual person; `src/noPersonNames.test.js` guards this.
 - `src/data/siteDetails.js` owns company identity: the public CIN has a built-in default, both fields support `VITE_COMPANY_*` overrides, and an empty registered address stays hidden; never put placeholder text on public pages.
