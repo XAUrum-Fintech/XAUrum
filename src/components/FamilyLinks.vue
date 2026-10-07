@@ -9,7 +9,7 @@
           :to="product.path"
           class="flex items-center gap-[18px] rounded-2xl border border-[var(--border-1)] bg-white px-6 py-[22px] text-[var(--fg-1)] transition-all duration-300 hover:border-secondary-300 hover:shadow-lg"
         >
-          <ProductTile :size="44" :radius="11" :mark-size="28" :badge="product.badge" :badge-size="26" :badge-icon-size="12" :badge-offset="6" />
+          <ProductTile :size="44" :radius="11" :mark-size="markSize" :badge="product.badge" :badge-size="26" :badge-icon-size="12" :badge-offset="badgeOffset" />
           <span class="min-w-0 flex-1">
             <span class="block text-[17px] font-bold">{{ product.name }}</span>
             <span class="mt-0.5 block text-sm text-[var(--fg-3)]">{{ product.tagline }}</span>
@@ -28,6 +28,8 @@ import { products } from '@/data/products'
 
 const props = defineProps({
   current: { type: String, required: true },
+  markSize: { type: Number, default: 27 },
+  badgeOffset: { type: Number, default: 7 },
 })
 
 const others = computed(() => products.filter((product) => product.key !== props.current))

@@ -57,7 +57,7 @@
 
     <StepCards eyebrow="GOING LIVE" heading="Live in three steps. We do the set-up." :steps="goingLive" />
 
-    <FamilyLinks current="desk" />
+    <FamilyLinks current="desk" :mark-size="28" :badge-offset="6" />
 
     <ContactBand
       heading="See orob Desk with your rates and your brand."

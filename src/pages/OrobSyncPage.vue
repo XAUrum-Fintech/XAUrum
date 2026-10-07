@@ -13,7 +13,7 @@
         aria-label="Illustration of orob Sync: a Tally Prime day book on the office PC, synced two minutes ago to a cloud view showing receivables, cash and bank balances, and an AI flag on a bill whose GST doesn't match the ledger. Values are illustrative."
         data-testid="orob-sync-illustration"
       >
-        <div class="absolute top-0 left-0 w-[76%] overflow-hidden rounded-[10px] border border-white/20 bg-secondary-100 text-[var(--fg-1)] shadow-[0_30px_60px_-20px_rgba(0,0,0,.6)]">
+        <div class="absolute top-0 left-0 w-[calc(76%+2px)] overflow-hidden rounded-[10px] border border-white/20 bg-secondary-100 text-[var(--fg-1)] shadow-[0_30px_60px_-20px_rgba(0,0,0,.6)]">
           <div class="flex items-center gap-2 bg-secondary-700 px-3 py-2 text-[11px] font-semibold text-white">
             <LucideIcon name="monitor" :size="13" :stroke-width="2" />Tally Prime · Your Bullion House<span class="ml-auto font-medium text-secondary-300">Office PC</span>
           </div>
@@ -32,7 +32,7 @@
           <LucideIcon name="refresh-cw" :size="14" :stroke-width="2.5" />orob Sync · 2 min ago
         </div>
 
-        <div class="absolute right-0 bottom-0 w-[78%] overflow-hidden rounded-[14px] border border-white/14 bg-mock shadow-[0_40px_80px_-20px_rgba(0,0,0,.7)]">
+        <div class="absolute right-0 bottom-0 w-[calc(78%+2px)] overflow-hidden rounded-[14px] border border-white/14 bg-mock shadow-[0_40px_80px_-20px_rgba(0,0,0,.7)]">
           <div class="flex items-center gap-[7px] border-b border-white/8 px-3.5 py-2.5">
             <span v-for="dot in 3" :key="dot" class="size-[9px] rounded-full bg-secondary-700" />
             <span class="ml-2.5 rounded-md bg-white/6 px-3 py-[3px] text-[11px] text-secondary-400">books.orob.in</span>
