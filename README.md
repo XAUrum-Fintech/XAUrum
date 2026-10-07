@@ -8,11 +8,12 @@ Standalone marketing website for Xaurum Fintech Private Limited and its orob pro
 - **orob Desk** — a hosted live-rate platform for bullions to stream their own prices to customers.
 - **orob Sync** — keeps a business's Tally Prime books in sync.
 
-The public site currently presents orob Desk and orob Sync. It keeps orob Desk on an illustration until its product UI is redesigned; the consumer app is not announced on visible site pages yet.
+The public site presents all three, with launch dates: orob (mid-October 2026), orob Desk (end of October 2026) and orob Sync (November 2026). Product screens on the site are illustrations with illustrative values. Set `VITE_SHOW_CONSUMER_APP=false` to hide the orob consumer app's card, page and links.
 
 ## Routes
 
-- `/` Home
+- `/` Home (sections `#products`, `#company`, `#security` and `#contact` can be linked directly)
+- `/orob` orob
 - `/orob-desk` orob Desk
 - `/orob-sync` orob Sync
 - `/company` Company
@@ -40,6 +41,20 @@ Copy `.env.example` to `.env` and set:
 
 - `VITE_SITE_URL` - public website URL
 - `VITE_ANALYTICS_ID` - analytics provider ID
+- `VITE_CONTACT_EMAIL` - the inbox that receives Contact us enquiries (default `contact@xaurum.in`)
+- `VITE_CONTACT_FORM_KEY` - the Web3Forms access key for that inbox (see below)
+- `VITE_SHOW_CONSUMER_APP` - set to `false` to hide the orob consumer app
+
+The GitHub Pages workflow reads the last three from repository variables of the same names (`Settings -> Secrets and variables -> Actions -> Variables`).
+
+## Contact us form
+
+The homepage form sends each enquiry as an email to `VITE_CONTACT_EMAIL`. Delivery uses [Web3Forms](https://web3forms.com), which works from a static site on any host, so it keeps working if the site moves from GitHub Pages:
+
+1. On web3forms.com, enter the receiving address (the same as `VITE_CONTACT_EMAIL`) to get an access key by email. The key is public by design: it can only send to that address.
+2. Add it as the repository variable `VITE_CONTACT_FORM_KEY` (or the same build variable on any other host) and redeploy.
+
+Until a key is set, submitting the form opens the visitor's email app with the enquiry filled in, addressed to `VITE_CONTACT_EMAIL`. A hidden honeypot field drops most bot submissions.
 
 ## CI
 

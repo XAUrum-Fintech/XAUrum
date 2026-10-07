@@ -3,14 +3,14 @@
 ## Project Structure & Module Organization
 The app is a Vue 3 + Vite marketing site.
 - `src/main.js` boots the app; `src/App.vue` is the shell.
-- `src/router/index.js` defines routes: `/`, `/orob-desk`, `/orob-sync`, `/company`, `/support`, plus a catch-all 404.
+- `src/router/index.js` defines routes: `/`, `/orob`, `/orob-desk`, `/orob-sync`, `/company`, `/support`, plus a catch-all 404.
 - `src/pages/` contains route-level views.
 - `src/components/` contains reusable UI sections.
 - `src/**/*.test.js` contains Vitest specs (currently page-focused).
 - `public/` stores static assets, plus static (JS-free) legal pages at `public/orob/{privacy,terms,delete-account,support}/index.html` — Vite copies these verbatim into `dist/`, and GitHub Pages serves them directly without going through the SPA. Privacy and terms point to the canonical pages on orob.app; delete-account and support remain local pages.
 - Product family: **orob** (free consumer app), **orob Desk** (hosted live-rate platform for bullions — never say "dealer" anywhere in its copy), **orob Sync** (keeps a business's books in sync with Tally Prime). The site never names an individual person; `src/noPersonNames.test.js` guards this.
 - `src/data/siteDetails.js` owns company identity: the public CIN has a built-in default, both fields support `VITE_COMPANY_*` overrides, and an empty registered address stays hidden; never put placeholder text on public pages.
-- Design tokens (colour, type, spacing) in `src/style.css` follow the orob design system; see the Orob repo's `docs/design/orob-consumer/README.md` for the canonical source if tokens need to change.
+- Design tokens (colour, type, spacing) in `src/style.css` follow the Xaurum website design handoff: amber (primary) and slate (secondary) scales, Manrope for UI and Inter for prices; `tailwind.config.js` mirrors the same colour scales.
 - Root config lives in files like `vite.config.js`, `tailwind.config.js`, and `postcss.config.js`.
 
 ## Build, Test, and Development Commands
