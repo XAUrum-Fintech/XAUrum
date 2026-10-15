@@ -8,7 +8,7 @@ Standalone marketing website for Xaurum Fintech Private Limited and its orob pro
 - **orob Desk** — a hosted live-rate platform for bullions to stream their own prices to customers.
 - **orob Sync** — keeps a business's Tally Prime books in sync.
 
-The public site presents all three, with launch dates: orob (mid-October 2026), orob Desk (end of October 2026) and orob Sync (November 2026). Product screens on the site are illustrations with illustrative values. Set `VITE_SHOW_CONSUMER_APP=false` to hide the orob consumer app's card, page and links.
+The public site presents all three; orob links to its App Store and Google Play listings through badges. Product screens on the site are illustrations with illustrative values. Set `VITE_SHOW_CONSUMER_APP=false` to hide the orob consumer app's card, page and links.
 
 ## Routes
 
