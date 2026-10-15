@@ -11,14 +11,16 @@ describe('HomePage', () => {
     )
   })
 
-  it('shows one card per orob product, each with its launch date and a link to its page', async () => {
+  it('shows one card per orob product without launch dates', async () => {
     const { wrapper } = await mountWithRouter(HomePage)
     const cards = wrapper.findAll('[data-testid="product-card"]')
     expect(cards.map((card) => card.find('h3').text())).toEqual(['orob', 'orob Desk', 'orob Sync'])
-    expect(cards.map((card) => card.find('a').attributes('href'))).toEqual(['/orob', '/orob-desk', '/orob-sync'])
-    expect(cards[0].text()).toContain('Mid-October 2026')
-    expect(cards[1].text()).toContain('End of October 2026')
-    expect(cards[2].text()).toContain('November 2026')
+    expect(cards.map((card) => card.find('a[href^="/"]').attributes('href'))).toEqual(['/orob', '/orob-desk', '/orob-sync'])
+    expect(cards.map((card) => card.text()).join(' ')).not.toMatch(/October 2026|November 2026|coming soon/i)
+    expect(cards[0].find('a[href="https://apps.apple.com/app/id6768894477"] img').attributes('src')).toBe('/brand/app-store-badge.svg')
+    expect(cards[0].find('a[href="https://play.google.com/store/apps/details?id=com.orob.mobile"] img').attributes('src')).toBe('/brand/google-play-badge.png')
+    expect(cards[1].find('[data-testid="app-store-badges"]').exists()).toBe(false)
+    expect(cards[2].find('[data-testid="app-store-badges"]').exists()).toBe(false)
     for (const card of cards) {
       expect(card.text()).toContain('AI')
     }

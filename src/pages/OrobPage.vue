@@ -1,9 +1,9 @@
 <template>
-  <ProductHero product-key="orob" eyebrow="FOR JEWELLERS & BULLIONS" launch-label="Launching mid-October 2026">
+  <ProductHero product-key="orob" eyebrow="FOR JEWELLERS & BULLIONS">
     <template #title>Know the best <span class="text-primary-400">rate first.</span></template>
     <template #sub>One app to compare live gold and silver rates across bullions, with short market-mover updates that explain why prices moved.</template>
     <template #ctas>
-      <SectionLink to="#contact" class="btn-light">Get notified at launch</SectionLink>
+      <AppStoreBadges />
       <SectionLink to="#features" class="btn-ghost">What it does</SectionLink>
     </template>
     <template #visual>
@@ -60,17 +60,21 @@
 
     <FamilyLinks current="orob" />
 
-    <ContactBand
-      heading="Be first to know when orob launches."
-      description="orob launches in mid-October 2026. Leave your details and we’ll let you know the day it’s live."
-      cta-label="Get notified"
-    />
+    <section class="bg-secondary-900 text-white" aria-labelledby="orob-download-heading">
+      <div class="container-x flex flex-wrap items-center justify-between gap-8 py-16">
+        <div>
+          <h2 id="orob-download-heading" class="text-[clamp(28px,3vw,36px)] leading-[1.15] font-bold tracking-[-0.025em] text-white">Get orob</h2>
+          <p class="mt-3 text-base text-secondary-300">Compare live gold and silver rates across bullions.</p>
+        </div>
+        <AppStoreBadges />
+      </div>
+    </section>
   </main>
 </template>
 
 <script setup>
 import AiTag from '@/components/AiTag.vue'
-import ContactBand from '@/components/ContactBand.vue'
+import AppStoreBadges from '@/components/AppStoreBadges.vue'
 import FamilyLinks from '@/components/FamilyLinks.vue'
 import FeatureItem from '@/components/FeatureItem.vue'
 import LiveLabel from '@/components/LiveLabel.vue'

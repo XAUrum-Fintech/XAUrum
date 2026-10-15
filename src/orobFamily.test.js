@@ -59,6 +59,7 @@ describe('hiding the orob consumer app with VITE_SHOW_CONSUMER_APP=false', () =>
 
     const { wrapper } = await mountHidden(HiddenHome)
     expect(wrapper.findAll('[data-testid="product-card"]')).toHaveLength(2)
+    expect(wrapper.find('[data-testid="app-store-badges"]').exists()).toBe(false)
     expect(wrapper.text()).not.toContain('Market-mover updates')
     expect(wrapper.find('a[href="/orob"]').exists()).toBe(false)
   })
