@@ -1,5 +1,5 @@
 <template>
-  <ProductHero product-key="desk" eyebrow="FOR BULLIONS" launch-label="End of October 2026" :mark-size="34">
+  <ProductHero product-key="desk" eyebrow="FOR BULLIONS" :mark-size="34">
     <template #title>Your rates. Your brand. <span class="text-primary-400">Your desk.</span></template>
     <template #sub>A trading platform on the web and in a dedicated app, under your bullion's name. Stream your rates, take customer orders and manage your book. We build it, host it and keep it running.</template>
     <template #ctas>

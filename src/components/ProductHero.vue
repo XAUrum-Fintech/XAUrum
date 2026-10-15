@@ -10,7 +10,6 @@
           <ProductTile :size="56" :radius="14" :mark-size="markSize" :badge="product.badge" :badge-size="30" badge-on-dark />
           <div>
             <p class="eyebrow text-secondary-400"><span class="tracking-[0.02em]">{{ product.name }}</span> · {{ eyebrow }}</p>
-            <p class="mt-1 text-[13px] font-semibold text-primary-300">{{ launchLabel }}</p>
           </div>
         </div>
         <h1 class="mt-[26px] text-[clamp(36px,4.6vw,54px)] leading-[1.05] font-extrabold tracking-[-0.035em] text-balance text-white">
@@ -39,7 +38,6 @@ import { productByKey } from '@/data/products'
 const props = defineProps({
   productKey: { type: String, required: true },
   eyebrow: { type: String, required: true },
-  launchLabel: { type: String, required: true },
   markSize: { type: Number, default: 35 },
 })
 

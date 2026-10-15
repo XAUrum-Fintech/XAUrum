@@ -1,5 +1,5 @@
 <template>
-  <ProductHero product-key="sync" eyebrow="FOR ACCOUNTS TEAMS" launch-label="November 2026">
+  <ProductHero product-key="sync" eyebrow="FOR ACCOUNTS TEAMS">
     <template #title>Your Tally, <span class="text-primary-400">in the cloud.</span></template>
     <template #sub>orob Sync connects the Tally Prime books you already keep to the cloud and keeps them in sync, so your accounts team never keys an entry in twice.</template>
     <template #ctas>

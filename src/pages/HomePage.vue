@@ -33,7 +33,6 @@
         >
           <div class="flex items-start justify-between">
             <ProductTile :badge="card.badge" />
-            <span class="rounded-full bg-primary-100 px-2.5 py-[3px] text-xs font-bold text-primary-800">{{ card.launch }}</span>
           </div>
           <p class="mt-6 text-xs font-bold tracking-[0.14em] text-[var(--fg-4)]">{{ card.eyebrow }}</p>
           <h3 class="mt-1.5 text-[26px] font-bold tracking-[-0.02em]">{{ card.name }}</h3>
@@ -44,7 +43,10 @@
             <li v-for="feature in card.features" :key="feature">{{ feature }}</li>
             <li class="flex items-center gap-2 font-semibold text-[var(--fg-1)]"><AiTag />{{ card.aiFeature }}</li>
           </ul>
-          <RouterLink :to="card.path" class="self-end pt-7 text-sm font-bold text-[var(--fg-1)] transition-colors hover:text-primary-700">Explore {{ card.name }} →</RouterLink>
+          <div class="flex flex-col items-start gap-3 pt-7">
+            <AppStoreBadges v-if="card.key === 'orob'" compact />
+            <RouterLink :to="card.path" class="self-end text-sm font-bold text-[var(--fg-1)] transition-colors hover:text-primary-700">Explore {{ card.name }} →</RouterLink>
+          </div>
         </article>
       </div>
     </section>
@@ -115,6 +117,7 @@
 <script setup>
 import { computed } from 'vue'
 import AiTag from '@/components/AiTag.vue'
+import AppStoreBadges from '@/components/AppStoreBadges.vue'
 import ContactSection from '@/components/ContactSection.vue'
 import HeroMock from '@/components/HeroMock.vue'
 import LucideIcon from '@/components/LucideIcon.vue'
@@ -127,7 +130,7 @@ const cardCopy = {
   orob: {
     eyebrow: 'FOR JEWELLERS & BULLIONS',
     description: 'Compare live gold and silver rates across bullions in one app.',
-    features: ['Live rates across bullions', 'For jewellers and bullions', 'Launching mid-October'],
+    features: ['Live rates across bullions', 'For jewellers and bullions'],
     aiFeature: 'Market-mover updates',
   },
   desk: {
