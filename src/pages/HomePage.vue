@@ -162,7 +162,7 @@ const allAiFeatures = [
     product: 'orob Desk',
     icon: 'shield-check',
     title: 'Intelligent hedging',
-    body: 'Watches your open position as orders come in and suggests when and how much to cover, so your book stays balanced through the trading day.',
+    body: 'Watches your open position as orders come in and alerts you when it crosses the thresholds you set, so you can keep your book balanced through the trading day.',
   },
   {
     key: 'sync',

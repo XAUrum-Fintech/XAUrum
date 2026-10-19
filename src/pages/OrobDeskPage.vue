@@ -51,7 +51,7 @@
     <AiBand
       eyebrow="INTELLIGENT HEDGING"
       heading="Keep your book balanced through the trading day."
-      lede="orob Desk watches your position as orders come in and tells you when it's time to cover."
+      lede="orob Desk watches your position as orders come in and alerts you when exposure builds."
       :steps="aiSteps"
     />
 
@@ -93,7 +93,7 @@ const features = [
 
 const aiSteps = [
   { title: 'Watches your position', body: 'Your net long or short in each metal is updated with every confirmed order.' },
-  { title: 'Suggests when and how much to cover', body: 'Suggestions take market movement and your own limits into account.' },
+  { title: 'Alerts you when exposure builds', body: 'Set your own thresholds and get a heads-up when your open position crosses them.' },
   { title: 'You stay in control', body: 'Nothing is placed without your confirmation on the dealing desk.' },
 ]
 
