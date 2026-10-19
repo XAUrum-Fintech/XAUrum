@@ -51,7 +51,7 @@
     <AiBand
       eyebrow="INTELLIGENT HEDGING"
       heading="Keep your book balanced through the trading day."
-      lede="orob Desk watches your position as orders come in, and alerts you when exposure builds."
+      lede="orob Desk watches your position as orders come in and alerts you when exposure builds."
       :steps="aiSteps"
     />
 
