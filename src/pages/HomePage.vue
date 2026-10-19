@@ -31,8 +31,9 @@
           class="row-span-6 grid grid-rows-subgrid gap-y-0 rounded-2xl border border-[var(--border-1)] bg-[var(--bg-2)] p-8 transition-all duration-300 hover:border-secondary-300 hover:shadow-lg"
           data-testid="product-card"
         >
-          <div class="flex items-start justify-between">
+          <div class="flex flex-wrap items-start justify-between gap-3">
             <ProductTile :badge="card.badge" />
+            <AppStoreBadges v-if="card.key === 'orob'" compact />
           </div>
           <p class="mt-6 text-xs font-bold tracking-[0.14em] text-[var(--fg-4)]">{{ card.eyebrow }}</p>
           <h3 class="mt-1.5 text-[26px] font-bold tracking-[-0.02em]">{{ card.name }}</h3>
@@ -40,12 +41,11 @@
             <span class="font-bold text-[var(--fg-1)]">{{ card.tagline }}</span> {{ card.description }}
           </p>
           <ul class="mt-[22px] flex flex-col gap-2.5 self-start border-t border-[var(--border-1)] pt-[22px] text-sm text-[var(--fg-2)]">
-            <li v-for="feature in card.features" :key="feature">{{ feature }}</li>
             <li class="flex items-center gap-2 font-semibold text-[var(--fg-1)]"><AiTag />{{ card.aiFeature }}</li>
+            <li v-for="feature in card.features" :key="feature">{{ feature }}</li>
           </ul>
-          <div class="flex flex-col items-start gap-3 pt-7">
-            <AppStoreBadges v-if="card.key === 'orob'" compact />
-            <RouterLink :to="card.path" class="self-end text-sm font-bold text-[var(--fg-1)] transition-colors hover:text-primary-700">Explore {{ card.name }} →</RouterLink>
+          <div class="flex justify-end pt-7">
+            <RouterLink :to="card.path" class="text-sm font-bold text-[var(--fg-1)] transition-colors hover:text-primary-700">Explore {{ card.name }} →</RouterLink>
           </div>
         </article>
       </div>
